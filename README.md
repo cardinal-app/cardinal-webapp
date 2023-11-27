@@ -6,5 +6,7 @@
 
 <br>
 
-#### `v0.0.x` Angular 16/17 Demo Functionality
+#### `v0.0.x` - Angular 16/17 Demo Functionality
   * Signals
+  * Deferrable Views
+  * Unit testing with Jest (`TODO`)

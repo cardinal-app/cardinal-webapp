@@ -1,9 +1,27 @@
-<h1>Total Running Volume (miles)</h1>
-<p>{{ totalMiles() }}</p>
+<!-- Signals -->
+<section>
+  <h1>Total Running Volume (miles)</h1>
+  <p>{{ totalMiles() }}</p>
 
-<br>
+  <br>
 
-<h1>Total Running Volume (kilometres)</h1>
-<p>{{ totalKilometres() }}</p>
+  <h1>Total Running Volume (kilometres)</h1>
+  <p>{{ totalKilometres() }}</p>
+</section>
+
+<!-- Deferrable Views -->
+<section class="historical-data" #hover>
+  @defer (on hover) {
+    <massive-component />
+  } @placeholder (minimum 1000ms) {
+  <p><fa-icon [icon]="faHandPointer"></fa-icon> Hover for historical data</p>
+  } @loading (after 100ms; minimum 1s) {
+    <img alt="loading..." src="loading.gif" />
+  } @error {
+    <p>Failed to load the calendar</p>
+  }
+  <!-- TODO :: play with test support for @defer -->
+  <!-- Question :: plugin support? -->
+</section>
 
 <router-outlet></router-outlet>
