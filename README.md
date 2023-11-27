@@ -4,6 +4,5 @@
 # webapp
 */ˈkɑːdɪnəl/ Of the greatest importance; fundamental.*
 
-<br>
-
-> v0.0.x : Angular 16/17 Demo Functionality
+* v0.0.x (Angular 16/17 Demo Functionality)
+  * Signals

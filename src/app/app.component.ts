@@ -10,6 +10,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  title = 'cardinal';
 
   // Signals :: Writable
   totalMiles = signal(0);
