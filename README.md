@@ -3,3 +3,7 @@
 <!-- Workflow Badge - Team City and/or GitHub Actions -->
 # webapp
 */ˈkɑːdɪnəl/ Of the greatest importance; fundamental.*
+
+<br>
+
+> v0.0.x : Angular 16/17 Demo Functionality
