@@ -4,11 +4,13 @@ import { RouterOutlet } from '@angular/router';
 import { MassiveComponentComponent } from "./massive-component/massive-component.component";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHandPointer } from '@fortawesome/free-solid-svg-icons';
+import { DataSubmissionComponent } from "./data-submission/data-submission.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MassiveComponentComponent, FontAwesomeModule],
+  imports: [CommonModule, NgbModule, RouterOutlet, MassiveComponentComponent, FontAwesomeModule, DataSubmissionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

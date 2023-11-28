@@ -1,0 +1,47 @@
+<button class="btn btn-sm btn-outline-primary" (click)="open(submissionModal)">Add week volume</button>
+
+<ng-template #submissionModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Enter running data</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="onSubmit(); weekForm.reset()" #weekForm="ngForm">
+      <div class="form-group">
+        <label for="block">Block</label>
+        <input type="text" class="form-control" id="block"
+               required
+               [(ngModel)]="model.block" name="block"
+               #block="ngModel">
+        <div [hidden]="block.valid || block.pristine"
+             class="alert alert-danger">
+          Block is required
+        </div>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="week">Week</label>
+        <input type="text" class="form-control" id="week"
+               [(ngModel)]="model.week" name="week">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="volume">Volume</label>
+        <input type="text" class="form-control" id="volume"
+               [(ngModel)]="model.volume" name="volume">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="activity">Activity</label>
+        <select class="form-control" id="activity"
+                [(ngModel)]="model.activity" name="activity">
+          @for (act of activities; track act) {
+            <option [value]="act">{{ act }}</option>
+          }
+        </select>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-success" [disabled]="!weekForm.form.valid">Submit</button>
+    </form>
+  </div>
+</ng-template>

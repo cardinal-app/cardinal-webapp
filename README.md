@@ -9,4 +9,5 @@
 #### `v0.0.x` - Angular 16/17 Demo Functionality
   * Signals
   * Deferrable Views
+  * New Control Flow Syntax
   * Unit testing with Jest (`TODO`)
