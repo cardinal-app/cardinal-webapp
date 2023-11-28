@@ -10,4 +10,5 @@
   * Signals
   * Deferrable Views
   * New Control Flow Syntax
+  * Server-Side Rendering (SSR) & Hydration
   * Unit testing with Jest (`TODO`)
