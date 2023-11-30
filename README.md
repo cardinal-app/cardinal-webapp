@@ -11,4 +11,5 @@
   * Deferrable Views
   * New Control Flow Syntax
   * Server-Side Rendering (SSR) & Hydration
+  * Default standalone components
   * Unit testing with Jest (`TODO`)

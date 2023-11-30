@@ -1,8 +1,8 @@
 // Block Week Object
 export class Week {
-  block: number | undefined;
-  week: number | undefined;
-  volume: number | undefined;
+  block: number = 0;
+  week: number = 0;
+  volume: number = 0;
   activity?: string = '';
 
   convert(wk: any) {

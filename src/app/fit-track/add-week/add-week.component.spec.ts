@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataSubmissionComponent } from './data-submission.component';
+import { AddWeekComponent } from './add-week.component';
 
-describe('DataSubmissionComponent', () => {
-  let component: DataSubmissionComponent;
-  let fixture: ComponentFixture<DataSubmissionComponent>;
+describe('AddWeekComponent', () => {
+  let component: AddWeekComponent;
+  let fixture: ComponentFixture<AddWeekComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DataSubmissionComponent]
+      imports: [AddWeekComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DataSubmissionComponent);
+    fixture = TestBed.createComponent(AddWeekComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
