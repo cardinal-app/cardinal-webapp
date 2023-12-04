@@ -9,7 +9,7 @@
     <form (ngSubmit)="onSubmit(); weekForm.reset()" #weekForm="ngForm">
       <div class="form-group">
         <label for="block">Block</label>
-        <input type="text" class="form-control" id="block"
+        <input type="number" class="form-control" id="block"
                required
                [(ngModel)]="model.block" name="block"
                #block="ngModel">
@@ -21,13 +21,13 @@
       <br>
       <div class="form-group">
         <label for="week">Week</label>
-        <input type="text" class="form-control" id="week"
+        <input type="number" class="form-control" id="week"
                [(ngModel)]="model.week" name="week">
       </div>
       <br>
       <div class="form-group">
         <label for="volume">Volume</label>
-        <input type="text" class="form-control" id="volume"
+        <input type="number" class="form-control" id="volume"
                [(ngModel)]="model.volume" name="volume">
       </div>
       <br>

@@ -21,16 +21,12 @@ export class FitTrackComponent implements OnInit {
   protected readonly faHeartbeat = faHeartbeat;
 
   // Signals :: Writable
-  weeks: WritableSignal<Week[]> = signal([new Week()])
+  weeks: WritableSignal<Week[]> = signal([new Week()]);
 
   // Signals :: Computed
-  totalMiles = computed(() => this.weeks().map(a => a.volume).reduce(
-    (a, b) => {
-      return a + b;
-    })
-  );
+  totalMiles = computed(() => this.calculateTotalMiles());
   totalKilometres = computed(() => 1.60934 * this.totalMiles());
-  lastWeek = computed(() => !!this.weeks() ?  this.weeks().at(-1)!.week : 0);
+  lastWeek = computed(() => this.getLastWeekNumber());
 
   constructor(private fitTrackService: FitTrackService) {
     // Signals :: Effects
@@ -45,6 +41,25 @@ export class FitTrackComponent implements OnInit {
     });
 
     this.weeks.set(historicalWeeks);
+  }
+
+  onWeekAdded(weeks: any): void {
+    // Question :: why doesn't computed signal update automatically with this.weeks() change?
+    this.totalMiles = computed(() => this.calculateTotalMiles());
+
+    // Note :: SignalComponents not supported in Ng17 - related^^
+    // so event is emitted in place of signal change in child component
+  }
+
+  calculateTotalMiles(): number {
+    return this.weeks().map(a => a.volume).reduce(
+      (a, b) => {
+        return a + b;
+      });
+  }
+
+  getLastWeekNumber(): number {
+    return !!this.weeks() ?  this.weeks().at(-1)!.week : 0;
   }
 
 }
