@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AddWeekComponent } from './add-week.component';
+import { VisualisationComponent } from './visualisation.component';
 
 // FixMe
-xdescribe('AddWeekComponent', () => {
-  let component: AddWeekComponent;
-  let fixture: ComponentFixture<AddWeekComponent>;
+xdescribe('VisualisationComponent', () => {
+  let component: VisualisationComponent;
+  let fixture: ComponentFixture<VisualisationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddWeekComponent]
+      imports: [VisualisationComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddWeekComponent);
+    fixture = TestBed.createComponent(VisualisationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

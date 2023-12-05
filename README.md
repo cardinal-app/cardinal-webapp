@@ -12,4 +12,4 @@
   * New Control Flow Syntax
   * Server-Side Rendering (SSR) & Hydration
   * Default standalone components
-  * Unit testing with Jest (`TODO`)
+  * Unit testing with Jest

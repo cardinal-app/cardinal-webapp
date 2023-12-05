@@ -2,20 +2,19 @@ import {Component, computed, effect, OnInit, signal, WritableSignal} from '@angu
 import { CommonModule } from '@angular/common';
 import {faHandPointer, faFutbol, faHeartbeat} from "@fortawesome/free-solid-svg-icons";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
-import {MassiveComponentComponent} from "../massive-component/massive-component.component";
 import {FitTrackService} from "./fit-track.service";
 import {Week} from "../model/week";
 import {AddWeekComponent} from "./add-week/add-week.component";
+import {VisualisationComponent} from "./visualisation/visualisation.component";
 
 @Component({
   selector: 'fit-track',
   standalone: true,
-  imports: [CommonModule, FaIconComponent, MassiveComponentComponent, AddWeekComponent],
+  imports: [CommonModule, FaIconComponent, AddWeekComponent, VisualisationComponent],
   templateUrl: './fit-track.component.html',
   styleUrl: './fit-track.component.scss'
 })
 export class FitTrackComponent implements OnInit {
-  protected readonly title = 'cardinal';
   protected readonly faHandPointer = faHandPointer;
   protected readonly faFutbol = faFutbol;
   protected readonly faHeartbeat = faHeartbeat;
@@ -31,7 +30,7 @@ export class FitTrackComponent implements OnInit {
   constructor(private fitTrackService: FitTrackService) {
     // Signals :: Effects
     effect(() => {
-      console.log(`The current total mileage is: ${this.totalMiles()}`);
+      console.log(`The current total mileage is: ${this.totalMiles()}`); // TODO: add logging
     });
   }
 
@@ -39,6 +38,9 @@ export class FitTrackComponent implements OnInit {
     const historicalWeeks = await this.fitTrackService.getHistoricalWeeks().then((weeks) => {
       return weeks
     });
+
+    // WTF :: why does the service [] come back unsorted
+    console.log(historicalWeeks);
 
     this.weeks.set(historicalWeeks);
   }

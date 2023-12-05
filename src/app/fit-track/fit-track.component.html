@@ -73,9 +73,9 @@
   <br>
   <br>
   <!-- Deferrable Views -->
-  <section class="historical-data" #hover>
+  <section class="historical-data">
     @defer (on hover) {
-      <massive-component />
+      <visualisation [weeks]="weeks()" />
     } @placeholder (minimum 1000ms) {
       <p><fa-icon [icon]="faHandPointer"></fa-icon> Hover for historical data</p>
     } @loading (after 100ms; minimum 1s) {

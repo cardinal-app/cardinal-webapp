@@ -15,9 +15,16 @@ export class FitTrackService {
       .get('weeks')
       .pipe(map(response => {
         const weeks = response["_embedded"].weeks;
-        return weeks.map((week: any) => {
+        const convertedWeeks = weeks.map((week: any) => {
           return new Week().convert(week);
         });
+
+        const orderedWeeks = convertedWeeks.sort((a: Week, b: Week) => {
+          return (b.block - a.block) || (b.week - a.week)
+        });
+        console.log(orderedWeeks); // TODO :: add logging...
+
+        return orderedWeeks;
       })));
   }
 
