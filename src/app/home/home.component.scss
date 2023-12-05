@@ -1,0 +1,26 @@
+#logo {
+  z-index: 100;
+  position: relative;
+}
+
+h1 {
+  font-size: 15rem;
+  position: absolute;
+  opacity: 0.2;
+  left: calc(50% - (1242px * .5));
+  top: 8rem;
+  text-transform: uppercase;
+  filter: blur(1px);
+  letter-spacing: 12px;
+  color: #ccc;
+
+  &.shadow {
+    top: 20rem;
+    opacity: 0.05;
+  }
+}
+
+section {
+  margin: 4rem auto;
+  text-align: center;
+}

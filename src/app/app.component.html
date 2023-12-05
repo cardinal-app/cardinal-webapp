@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img width="32" height="32" src="https://img.icons8.com/external-icongeek26-flat-icongeek26/64/external-cardinal-birds-icongeek26-flat-icongeek26.png" alt="external-cardinal-birds-icongeek26-flat-icongeek26"/>
+    <a class="navbar-brand" routerLink="/">
+      <img src="/assets/cardinal-logo.png" alt="external-cardinal-birds-icongeek26-flat-icongeek26"/>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,17 +9,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" routerLink="/">Home</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link text-light" routerLink="/fit-track">Fit Track</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
 <br>
 <br>
-
 <router-outlet></router-outlet>
