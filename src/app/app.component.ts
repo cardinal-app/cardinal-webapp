@@ -8,7 +8,7 @@ import {HomeComponent} from "./home/home.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, NgbModule, RouterOutlet, FontAwesomeModule, RouterLink, HomeComponent],
+  imports: [CommonModule, RouterOutlet, FontAwesomeModule, RouterLink, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
