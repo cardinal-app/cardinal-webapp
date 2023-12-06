@@ -22,7 +22,7 @@ export class FitTrackService {
         const orderedWeeks = convertedWeeks.sort((a: Week, b: Week) => {
           return (b.block - a.block) || (b.week - a.week)
         });
-        console.log(orderedWeeks); // TODO :: add logging...
+        console.log(`[getHistoricalWeeks] Returning orderedWeeks\n${orderedWeeks}`); // TODO :: add logging...
 
         return orderedWeeks;
       })));
