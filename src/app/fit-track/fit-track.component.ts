@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, computed, effect, OnInit, signal, WritableSignal} from '@angular/core';
+import {Component, computed, effect, OnInit, signal, WritableSignal} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {faFutbol, faHandPointer, faHeartbeat} from "@fortawesome/free-solid-svg-icons";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
@@ -20,8 +20,7 @@ export class FitTrackComponent implements OnInit {
   protected readonly faHeartbeat = faHeartbeat;
 
   // Signals :: Writable
-  weeks: Week[] = [];
-  weekList: WritableSignal<Week[]> = signal(this.weeks);
+  weeks: WritableSignal<Week[]> = signal([new Week()]);
 
   // Signals :: Computed
   totalMiles = computed(() => this.calculateTotalMiles());
@@ -31,7 +30,7 @@ export class FitTrackComponent implements OnInit {
   constructor(private fitTrackService: FitTrackService) {
     // Signals :: Effects
     effect(() => {
-      console.log(`[constructor] List size: ${this.weekList().length}`);
+      console.log(`[constructor] List size: ${this.weeks().length}`);
       console.log(`[constructor] The current total mileage is: ${this.totalMiles()}`); // TODO: add logging
     });
   }
@@ -45,24 +44,23 @@ export class FitTrackComponent implements OnInit {
       );
 
     // WTF :: why does the service [] come back unsorted
-    console.log(`[init] Loaded [${historicalWeeks.length}] historicalWeeks ... setting this.weeks ...`);
-    this.weeks = historicalWeeks;
-    console.log(`[init] Loaded [${historicalWeeks.length}] historicalWeeks ... setting this.weeks [DONE]`);
-
     // console.log(`[init] Loaded [${historicalWeeks.length}] historicalWeeks ... setting this.weekList ...`);
-    // this.weekList.set(historicalWeeks);
-    // console.log(`[init] Loaded [${historicalWeeks.length}] historicalWeeks ... setting this.weekList [DONE]`);
+    this.weeks.set(historicalWeeks);
+    console.log(`[init] Loaded [${historicalWeeks.length}] historicalWeeks ... setting this.weekList [DONE]`);
   }
 
+  /**
+   * Add the new week created from the dialog back to the Weeks signal list
+   * @param week, the created Week.
+   */
   onWeekAdded(week: any): void {
     console.log(`[onWeekAdded] Callback triggered, update weeks`);
-    this.weeks.push(week);
-    this.weekList.update(weeks => [...this.weeks]);
+    this.weeks.update(weeks => [week,...weeks]);
   }
 
   calculateTotalMiles(): number {
     console.log(`[calculateTotalMiles] calculating ..`)
-    let n = this.weekList().map(a => a.volume);
+    let n = this.weeks().map(a => a.volume);
 
     let miles = 0;
     if (n.length > 0) {
@@ -77,7 +75,7 @@ export class FitTrackComponent implements OnInit {
   }
 
   getLastWeekNumber(): number {
-    return this.weekList().length > 0 ? this.weekList().at(-1)!.week : 0;
+    return this.weeks().length > 0 ? this.weeks().at(-1)!.week : 0;
   }
 
 }

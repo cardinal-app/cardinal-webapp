@@ -36,7 +36,7 @@
       </tr>
       </thead>
       <tbody>
-        @for (wk of weekList(); track wk) {
+        @for (wk of weeks(); track wk) {
           <tr>
             <td>{{ wk.block }}</td>
             <td>{{ wk.week }}</td>
@@ -75,7 +75,7 @@
   <!-- Deferrable Views -->
   <section class="historical-data">
     @defer (on hover) {
-      <visualisation [weeks]="weekList()" />
+      <visualisation [weeks]="weeks()" />
     } @placeholder (minimum 1000ms) {
       <p><fa-icon [icon]="faHandPointer"></fa-icon> Hover for historical data</p>
     } @loading (after 100ms; minimum 1s) {
