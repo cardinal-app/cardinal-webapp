@@ -6,11 +6,12 @@ import {FitTrackService} from "./fit-track.service";
 import {Week} from "../model/week";
 import {AddWeekComponent} from "./add-week/add-week.component";
 import {VisualisationComponent} from "./visualisation/visualisation.component";
+import { OrderWeeksPipe } from '../core/pipes/order-weeks.pipe';
 
 @Component({
   selector: 'fit-track',
   standalone: true,
-  imports: [CommonModule, FaIconComponent, AddWeekComponent, VisualisationComponent],
+  imports: [CommonModule, FaIconComponent, AddWeekComponent, VisualisationComponent, OrderWeeksPipe],
   templateUrl: './fit-track.component.html',
   styleUrl: './fit-track.component.scss'
 })
@@ -34,15 +35,10 @@ export class FitTrackComponent implements OnInit {
     });
   }
 
-  async ngOnInit(): Promise<void> {
-    const historicalWeeks = await this.fitTrackService.getHistoricalWeeks().then((weeks) => {
-      return weeks
+  ngOnInit(): void {
+    this.fitTrackService.getHistoricalWeeks().subscribe((weeks) => {
+      this.weeks.set(weeks);
     });
-
-    // WTF :: why does the service [] come back unsorted
-    console.log(historicalWeeks);
-
-    this.weeks.set(historicalWeeks);
   }
 
   onWeekAdded(weeks: any): void {

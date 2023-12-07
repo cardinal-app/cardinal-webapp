@@ -6,12 +6,12 @@ export class Week {
   activity?: string = '';
 
   convert(wk: any) {
-   this.block = wk.block;
-   this.week = wk.week;
-   this.volume = wk.volume;
-   this.activity = wk.activity;
+    this.block = wk.block;
+    this.week = wk.week;
+    this.volume = wk.volume;
+    this.activity = wk.activity;
 
-   return this;
+    return this;
   }
 
 }

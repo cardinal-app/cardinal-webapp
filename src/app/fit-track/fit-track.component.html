@@ -36,7 +36,7 @@
       </tr>
       </thead>
       <tbody>
-        @for (wk of weeks(); track wk) {
+        @for (wk of weeks() | orderWeeks; track wk) {
           <tr>
             <td>{{ wk.block }}</td>
             <td>{{ wk.week }}</td>

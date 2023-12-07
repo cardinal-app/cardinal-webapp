@@ -6,7 +6,7 @@
 h1 {
   font-size: 15rem;
   position: absolute;
-  opacity: 0.2;
+  opacity: .2;
   left: calc(50% - (1242px * .5));
   top: 8rem;
   text-transform: uppercase;
@@ -16,7 +16,7 @@ h1 {
 
   &.shadow {
     top: 20rem;
-    opacity: 0.05;
+    opacity: .05;
   }
 }
 
