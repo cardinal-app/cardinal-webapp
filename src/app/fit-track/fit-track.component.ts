@@ -31,33 +31,45 @@ export class FitTrackComponent implements OnInit {
   constructor(private fitTrackService: FitTrackService) {
     // Signals :: Effects
     effect(() => {
-      console.log(`The current total mileage is: ${this.totalMiles()}`); // TODO: add logging
+      console.log(`[constructor] List size: ${this.weeks().length}`);
+      console.log(`[constructor] The current total mileage is: ${this.totalMiles()}`); // TODO: add logging
     });
   }
 
   ngOnInit(): void {
     this.fitTrackService.getHistoricalWeeks().subscribe((weeks) => {
+      console.log(`[init] Loaded [${weeks.length}] historical weeks ... setting this.weeks()`);
       this.weeks.set(weeks);
     });
   }
 
-  onWeekAdded(weeks: any): void {
-    // Question :: why doesn't computed signal update automatically with this.weeks() change?
-    this.totalMiles = computed(() => this.calculateTotalMiles());
-
-    // Note :: SignalComponents not supported in Ng17 - related^^
-    // so event is emitted in place of signal change in child component
+  /**
+   * Add the new week created from the dialog back to the Weeks signal list
+   * @param week
+   */
+  onWeekAdded(week: any): void {
+    console.log(`[onWeekAdded] Callback triggered, update weeks`);
+    this.weeks.update(weeks => [week,...weeks]);
   }
 
   calculateTotalMiles(): number {
-    return this.weeks().map(a => a.volume).reduce(
-      (a, b) => {
-        return a + b;
-      });
+    console.log(`[calculateTotalMiles] calculating ..`)
+    let n = this.weeks().map(a => a.volume);
+
+    let miles = 0;
+    if (n.length > 0) {
+      miles = n.reduce(
+        (a, b) => {
+          return a + b;
+        });
+    }
+    console.log(`[calculateTotalMiles] calculating .. there are [${miles}] miles done.`)
+
+    return miles;
   }
 
   getLastWeekNumber(): number {
-    return !!this.weeks() ?  this.weeks().at(-1)!.week : 0;
+    return this.weeks().length > 0 ? this.weeks().at(-1)!.week : 0;
   }
 
 }

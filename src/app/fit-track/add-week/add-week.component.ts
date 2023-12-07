@@ -19,9 +19,8 @@ export class AddWeekComponent {
   model: Week;
   modalReference: NgbModalRef | undefined;
 
-  @Input() weeks: Week[] | undefined;
-  @Output() weekAdded: EventEmitter<Week[]> = new EventEmitter();
-
+  // @Output() weekAdded: EventEmitter<Week[]> = new EventEmitter();
+  @Output() weekAdded: EventEmitter<Week> = new EventEmitter();
 
   constructor(private modalService: NgbModal,
               private fitTrackService: FitTrackService) {
@@ -35,8 +34,8 @@ export class AddWeekComponent {
   onSubmit() {
     const newWeek = new Week().convert(this.model);
     this.fitTrackService.addWeek(newWeek)
-    this.weeks!.push(newWeek);
-    this.weekAdded.emit(this.weeks);
+
+    this.weekAdded.emit(newWeek);
 
     this.submitted = true;
     this.modalReference!.close('Submitted');
