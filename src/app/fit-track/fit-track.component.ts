@@ -1,6 +1,6 @@
 import {Component, computed, effect, OnInit, signal, WritableSignal} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {faHandPointer, faFutbol, faHeartbeat} from "@fortawesome/free-solid-svg-icons";
+import {CommonModule} from '@angular/common';
+import {faFutbol, faHandPointer, faHeartbeat} from "@fortawesome/free-solid-svg-icons";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {FitTrackService} from "./fit-track.service";
 import {Week} from "../model/week";
@@ -37,6 +37,16 @@ export class FitTrackComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // XXX: Using 'await' and then setting, may well be more performant and can avoid memory leaks.
+    /* e.g.
+      ```
+      const historicalWeeks: Week[] = await this.fitTrackService.getHistoricalWeeks(); // No need for the extra 'then'
+      this.weeks.set(historicalWeeks);
+      ```
+      If you are going to 'subscribe', then really you should store that subscription in a variable and remember to
+      unsubscribe in the destroy function.
+    */
+
     this.fitTrackService.getHistoricalWeeks().subscribe((weeks) => {
       console.log(`[init] Loaded [${weeks.length}] historical weeks ... setting this.weeks()`);
       this.weeks.set(weeks);
@@ -49,13 +59,12 @@ export class FitTrackComponent implements OnInit {
    */
   onWeekAdded(week: any): void {
     console.log(`[onWeekAdded] Callback triggered, update weeks`);
-    this.weeks.update(weeks => [week,...weeks]);
+    this.weeks.update(weeks => [week, ...weeks]);
   }
 
   calculateTotalMiles(): number {
     console.log(`[calculateTotalMiles] calculating ..`)
     let n = this.weeks().map(a => a.volume);
-
     let miles = 0;
     if (n.length > 0) {
       miles = n.reduce(
