@@ -9,8 +9,8 @@
     "test": "ng test",
     "serve:ssr:webapp": "node dist/webapp/server/server.mjs",
     "e2e": "ng e2e",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "private": true,
   "dependencies": {
