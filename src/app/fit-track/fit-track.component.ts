@@ -47,10 +47,11 @@ export class FitTrackComponent implements OnInit {
       unsubscribe in the destroy function.
     */
 
-    this.fitTrackService.getHistoricalWeeks().subscribe((weeks) => {
-      console.log(`[init] Loaded [${weeks.length}] historical weeks ... setting this.weeks()`);
-      this.weeks.set(weeks);
-    });
+    // this.fitTrackService.getHistoricalWeeks().subscribe((weeks) => {
+    //   console.log(`[init] Loaded [${weeks.length}] historical weeks ... setting this.weeks()`);
+    //   this.weeks.set(weeks);
+    // });
+    // FixMe :: causing Error 500 at build-time...
   }
 
   /**
