@@ -50,6 +50,7 @@ export class FitTrackComponent implements OnInit {
   onWeekAdded(week: any): void {
     console.log(`[onWeekAdded] Callback triggered, update weeks`);
     this.weeks.update(weeks => [week,...weeks]);
+    // Note :: change detection occurs when the reference tracked by the signal changes, not simply the value in memory
   }
 
   calculateTotalMiles(): number {
