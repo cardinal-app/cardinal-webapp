@@ -25,21 +25,19 @@
                [(ngModel)]="model.week" name="week">
       </div>
       <br>
-      <div class="form-group">
-        <label for="volume">Volume</label>
-        <input type="number" class="form-control" id="volume"
-               [(ngModel)]="model.volume" name="volume">
-      </div>
+<!--      <div class="form-group">-->
+<!--        <label for="volume">Volume</label>-->
+<!--        <input type="number" class="form-control" id="volume" [(ngModel)]="model.volume" name="volume">-->
+<!--      </div>-->
       <br>
-      <div class="form-group">
-        <label for="activity">Activity</label>
-        <select class="form-control" id="activity"
-                [(ngModel)]="model.activity" name="activity">
-          @for (act of activities; track act) {
-            <option [value]="act">{{ act }}</option>
-          }
-        </select>
-      </div>
+<!--      <div class="form-group">-->
+<!--        <label for="activity">Activity</label>-->
+<!--        <select class="form-control" id="activity" [(ngModel)]="model.activity" name="activity">-->
+<!--          @for (act of activities; track act) {-->
+<!--            <option [value]="act">{{ act }}</option>-->
+<!--          }-->
+<!--        </select>-->
+<!--      </div>-->
       <br>
       <button id="btn-submit-week" type="submit" class="btn btn-success" [disabled]="!weekForm.form.valid">Submit</button>
     </form>
