@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'y',
-  templateUrl: './y.component.html',
+  selector: 'app-y',
   standalone: true,
-  styleUrl: './y.component.css'
+  imports: [CommonModule],
+  templateUrl: './y.component.html',
+  styleUrl: './y.component.scss'
 })
 export class YComponent {
 

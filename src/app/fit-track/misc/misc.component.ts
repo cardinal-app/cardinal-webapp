@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-x',
+  selector: 'app-misc',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './x.component.html',
-  styleUrl: './x.component.scss'
+  templateUrl: './misc.component.html',
+  styleUrl: './misc.component.scss'
 })
-export class XComponent {
+export class MiscComponent {
 
 }
