@@ -1,4 +1,4 @@
-import {Entity} from "../../../../../core/model/entity";
+import {Entity} from "../../../../../accessory/model/entity";
 
 /**
  * Running Session Object

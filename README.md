@@ -7,9 +7,26 @@
 <br>
 
 #### `v0.0.x` - Angular 16/17 Demo Functionality
-  * Signals
-  * Deferrable Views
-  * New Control Flow Syntax
-  * Server-Side Rendering (SSR) & Hydration
-  * Default standalone components
-  * Unit testing with Jest
+- Signals
+- Deferrable Views
+- New Control Flow Syntax
+- Server-Side Rendering (SSR) & Hydration
+- Default standalone components
+- Unit testing with Jest
+- E2e testing with Cypress
+
+<br>
+
+### Project Structure
+- app
+  - src
+    - component (presentation structure)
+      - home
+      - fit-track
+      - x
+      - y
+    - core (global functionality)
+      - utilities
+      - services
+      - models
+    - `app.*.*`

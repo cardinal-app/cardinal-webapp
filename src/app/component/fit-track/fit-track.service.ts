@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpService} from "../core/http/http.service";
+import {HttpService} from "../accessory/http/http.service";
 
 import {lastValueFrom, map, Observable} from "rxjs";
 import {Week} from "./model/week";

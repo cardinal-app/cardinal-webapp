@@ -6,7 +6,7 @@ import { FitTrackService } from "./fit-track.service";
 import { Week } from "./model/week";
 import { AddWeekComponent } from "./add-week/add-week.component";
 import { VisualisationComponent } from "./visualisation/visualisation.component";
-import { OrderWeeksPipe } from '../core/pipes/order-weeks.pipe';
+import { OrderWeeksPipe } from '../accessory/pipes/order-weeks.pipe';
 
 @Component({
   selector: 'fit-track',
