@@ -1,5 +1,5 @@
 import {Exercise} from "./exercise";
-import {Entity} from "../../../../../accessory/model/entity";
+import {Entity} from "../../../../entity";
 
 /**
  * Resistance Session Object

@@ -1,4 +1,4 @@
-import {Entity} from "../../../../../accessory/model/entity";
+import {Entity} from "../../../../entity";
 
 /**
  * Exercise Object

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-misc',
+  selector: 'misc',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './misc.component.html',

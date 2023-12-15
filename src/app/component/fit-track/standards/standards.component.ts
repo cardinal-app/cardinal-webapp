@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-standards',
+  selector: 'standards',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './standards.component.html',

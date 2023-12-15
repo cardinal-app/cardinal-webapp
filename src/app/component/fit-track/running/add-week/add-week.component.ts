@@ -2,8 +2,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgbModal, NgbModalRef, NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { FitTrackService } from "../fit-track.service";
-import { Week } from "../model/week";
+import {FitTrackService} from "../../../core/service/fit-track/fit-track.service";
+import {Week} from "../../../core/model/fit-track/week";
 
 @Component({
   selector: 'add-week',
@@ -32,7 +32,7 @@ export class AddWeekComponent {
   }
 
   onSubmit() {
-    const newWeek = new Week().convert(this.model);
+    const newWeek = Week.convert(this.model);
     this.fitTrackService.addWeek(newWeek)
 
     this.weekAdded.emit(newWeek);

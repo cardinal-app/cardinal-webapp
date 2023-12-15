@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from "@angular/core";
-import { Week } from "../../fit-track/model/week";
+import {Week} from "../model/fit-track/week";
 
 @Pipe({
   standalone: true,

@@ -1,6 +1,6 @@
 import {RunningSession} from "./session/running-session";
 import {Volume} from "./volume";
-import {Entity} from "../../../../accessory/model/entity";
+import {Entity} from "../../../entity";
 
 /**
  * Running Object

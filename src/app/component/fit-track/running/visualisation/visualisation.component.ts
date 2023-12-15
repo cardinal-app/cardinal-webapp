@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Week } from "../model/week";
 import { Chart } from 'chart.js/auto';
+import {Week} from "../../../core/model/fit-track/week";
 
 @Component({
   selector: 'visualisation',

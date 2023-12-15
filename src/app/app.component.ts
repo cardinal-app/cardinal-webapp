@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import {HomeComponent} from "./home/home.component";
+import { HomeComponent } from "./component/home/home.component";
 
 @Component({
   selector: 'app-root',

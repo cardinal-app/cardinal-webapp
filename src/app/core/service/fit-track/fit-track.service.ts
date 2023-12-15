@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpService} from "../accessory/http/http.service";
 
-import {lastValueFrom, map, Observable} from "rxjs";
-import {Week} from "./model/week";
+import {lastValueFrom, map} from "rxjs";
+import {HttpService} from "../http/http.service";
+import {Week} from "../../model/fit-track/week";
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,10 @@ export class FitTrackService {
   getHistoricalWeeks(): Promise<Week[]> {
     return lastValueFrom(this.httpService
       .get('weeks')
-      .pipe(map(response => {
+      .pipe(map((response: any) => {
         const weeks = response["_embedded"].weeks;
         return weeks.map((week: any) => {
-          return new Week().convert(week);
+          return Week.convert(week);
         });
       })));
   }

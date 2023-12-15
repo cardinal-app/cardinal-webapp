@@ -1,5 +1,5 @@
 import {ResistanceSession} from "./session/resistance-session";
-import {Entity} from "../../../../accessory/model/entity";
+import {Entity} from "../../../entity";
 
 /**
  * Resistance Object

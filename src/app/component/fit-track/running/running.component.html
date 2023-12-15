@@ -1,1 +1,83 @@
-<p>running works!</p>
+  <div class="container text-center">
+    <div class="row border">
+      <div class="col bg-dark bg-gradient text-light">
+        Total Running Volume
+      </div>
+    </div>
+    <div class="row border">
+      <div class="col bg-light bg-gradient border-end">Miles</div>
+      <div class="col bg-light bg-gradient">Kilometers</div>
+    </div>
+    <div class="row border">
+      <!-- Signals -->
+      <div class="col bg-light bg-gradient border-end text-primary">{{ totalMiles() }}</div>
+      <div class="col bg-light bg-gradient text-success">{{ totalKilometres() }}</div>
+    </div>
+  </div>
+  <br>
+  <br>
+<!--  &lt;!&ndash; New Control Flow Syntax &ndash;&gt;-->
+<!--  <add-week (weekAdded)="onWeekAdded($event)"/>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <section>-->
+<!--    <h4>Weekly Volume</h4>-->
+<!--    <table class="table" id="week-volume-table">-->
+<!--      <thead>-->
+<!--      <tr>-->
+<!--        <th scope="col">Block</th>-->
+<!--        <th scope="col">Week</th>-->
+<!--        <th scope="col">Volume</th>-->
+<!--        <th scope="col">Activity</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--        @for (wk of weeks() | orderWeeks; track wk) {-->
+<!--          <tr>-->
+<!--            <td>{{ wk.block }}</td>-->
+<!--            <td>{{ wk.week }}</td>-->
+<!--            <td>{{ wk.volume }}</td>-->
+<!--            @switch (wk.activity) {-->
+<!--              @case ('squash') {-->
+<!--                <td>{{ wk.activity }} <fa-icon class="text-success" [icon]="faHeartbeat"></fa-icon></td>-->
+<!--              }-->
+<!--              @case ('footie') {-->
+<!--                <td>{{ wk.activity }} <fa-icon class="text-danger" [icon]="faFutbol"></fa-icon></td>-->
+<!--              }-->
+<!--              @default {-->
+<!--                <td>{{ wk.activity }}</td>-->
+<!--              }-->
+<!--            }-->
+<!--          </tr>-->
+<!--        } @empty {-->
+<!--          <tr>-->
+<!--            <td>Weekly volume data will show here</td>-->
+<!--          </tr>-->
+<!--        }-->
+<!--      </tbody>-->
+<!--    </table>-->
+<!--    @if (lastWeek() >= 14) {-->
+<!--      <p>You are overdue a light week</p>-->
+<!--    } @else if (lastWeek() >= 12) {-->
+<!--      <p>You should consider a light week in the next 1-2 weeks</p>-->
+<!--    } @else if (lastWeek() >= 6) {-->
+<!--      <p>You're over half way through this training block</p>-->
+<!--    } @else {-->
+<!--      <p>Light weeks should be taken every 12 weeks or so</p>-->
+<!--    }-->
+<!--  </section>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  &lt;!&ndash; Deferrable Views &ndash;&gt;-->
+<!--  <section class="historical-data">-->
+<!--    @defer (on hover) {-->
+<!--      <visualisation [weeks]="weeks()" />-->
+<!--    } @placeholder (minimum 1000ms) {-->
+<!--      <p><fa-icon [icon]="faHandPointer"></fa-icon> Hover for historical data</p>-->
+<!--    } @loading (after 100ms; minimum 1s) {-->
+<!--      <img alt="loading..." src="loading.gif" />-->
+<!--    } @error {-->
+<!--      <p>Failed to load the calendar</p>-->
+<!--    }-->
+<!--    &lt;!&ndash; FixMe :: icon flicker &ndash;&gt;-->
+<!--    &lt;!&ndash; TODO :: play with test support for @defer &ndash;&gt;-->

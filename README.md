@@ -20,13 +20,14 @@
 ### Project Structure
 - app
   - src
-    - component (presentation structure)
+    - component (presentation structure) [tested with Cypress?]
       - home
       - fit-track
       - x
       - y
-    - core (global functionality)
+    - core (global functionality) [tested with Jest?]
       - utilities
       - services
-      - models
+      - model
+      - pipes
     - `app.*.*`

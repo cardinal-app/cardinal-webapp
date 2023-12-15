@@ -1,7 +1,7 @@
 import {AuxiliarySession} from "./session/auxiliary-session";
 import {MiscSession} from "./session/misc-session";
 import {GPPSession} from "./session/gpp-session";
-import {Entity} from "../../../../accessory/model/entity";
+import {Entity} from "../../../entity";
 
 /**
  * Misc. Object
