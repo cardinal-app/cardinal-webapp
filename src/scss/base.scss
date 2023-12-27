@@ -1,0 +1,10 @@
+@import 'colour';
+@import 'font';
+@import 'spacing';
+
+$landing-image: url('../assets/rolling-hills.png');
+$drop-shadow: 0 .5rem 2rem -.5rem #000000BF;
+
+* {
+  font-family: Montserrat, serif;
+}

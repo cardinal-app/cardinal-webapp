@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-y',
+  selector: 'y',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './y.component.html',

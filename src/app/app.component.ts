@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeComponent } from "./component/home/home.component";
+import { HomeComponent } from "./structure/home/home.component";
 
 @Component({
   selector: 'app-root',
@@ -13,4 +13,7 @@ import { HomeComponent } from "./component/home/home.component";
 })
 export class AppComponent {
   readonly title = 'cardinal';
+
+  constructor(public router: Router) {}
+
 }

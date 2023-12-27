@@ -1,18 +1,18 @@
 import { Component, computed, effect, OnInit, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
-import {ResistanceComponent} from "./resistance/resistance.component";
-import {MiscComponent} from "./misc/misc.component";
-import {StandardsComponent} from "./standards/standards.component";
-import {RunningComponent} from "./running/running.component";
-import {Week} from "../../core/model/fit-track/week";
-import {FitTrackService} from "../../core/service/fit-track/fit-track.service";
-import {OrderWeeksPipe} from "../../core/pipe/order-weeks.pipe";
+import { ResistanceComponent } from "./resistance/resistance.component";
+import { GeneralComponent } from "./general/general.component";
+import { StandardsComponent } from "./standards/standards.component";
+import { RunningComponent } from "./running/running.component";
+import { Week } from "../../core/model/fit-track/week";
+import { FitTrackService } from "../../core/service/fit-track/fit-track.service";
+import { OrderWeeksPipe } from "../../core/pipe/order-weeks.pipe";
 
 @Component({
   selector: 'fit-track',
   standalone: true,
-  imports: [CommonModule, FaIconComponent, OrderWeeksPipe, ResistanceComponent, MiscComponent, StandardsComponent, RunningComponent],
+  imports: [CommonModule, FaIconComponent, OrderWeeksPipe, ResistanceComponent, GeneralComponent, StandardsComponent, RunningComponent],
   templateUrl: './fit-track.component.html',
   styleUrl: './fit-track.component.scss'
 })

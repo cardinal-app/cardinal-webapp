@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'misc',
+  selector: 'general',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './misc.component.html',
-  styleUrl: './misc.component.scss'
+  templateUrl: './general.component.html',
+  styleUrl: './general.component.scss'
 })
-export class MiscComponent {
+export class GeneralComponent {
 
 }

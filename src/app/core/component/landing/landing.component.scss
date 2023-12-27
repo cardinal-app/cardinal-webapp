@@ -1,0 +1,30 @@
+@import 'base';
+
+div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#background-image {
+  background-image: $landing-image;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#orange-overlay {
+  background: $valencia;
+  background: linear-gradient(65deg, $woodsmoke 15%, $valencia 65%, $buckthorn 100%);
+  opacity: 85%;
+}
+
+#dark-overlay-1 {
+  background: $black;
+  background: linear-gradient(0deg, $black 0%, $black00 50%);
+}
+
+#dark-overlay-2 {
+  background: $black;
+  background: linear-gradient(25deg, $black 0%, $black00 60%);
+}

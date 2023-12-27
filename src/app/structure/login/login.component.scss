@@ -1,0 +1,50 @@
+@import 'base';
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  top: 7.5%;
+  position: absolute;
+  width: 100%;
+  opacity: .15;
+  font-size: 12rem;
+  background: -webkit-linear-gradient(270deg, $graphite 0%, $graphite00 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: $semi-bold;
+  user-select: none;
+  letter-spacing: 4rem;
+}
+
+section {
+  position: absolute;
+  width: $login-width;
+  height: $login-height;
+  left: calc(50% - ($login-width * .5));
+  top: calc(50% - ($login-height * .5));
+  text-align: center;
+  box-shadow: $drop-shadow;
+  border-radius: 3rem;
+  border: 1px solid $zest75;
+
+  background: $asphalt;
+  background: linear-gradient(87deg, $asphalt 0%, $crowshead 49%, $rebel 100%);
+
+  img {
+    filter: drop-shadow(0 0 .5rem $black);
+    height: 3rem;
+    aspect-ratio: 1 / 1;
+    margin-top: 4rem;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 1rem;
+    letter-spacing: .25rem;
+    background: -webkit-linear-gradient(30deg, $valencia 0%, $zest 100%);
+    filter: drop-shadow(0 0 .5rem $black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
