@@ -3,6 +3,7 @@
 $valencia: #d45B4a;
 $buckthorn: #fcb55e;
 $zest: #e57028;
+$zest50: #e5702880;
 $zest75: #e57028BF;
 
 // Dark
@@ -14,3 +15,15 @@ $asphalt: #130904;
 $graphite00: #27170800;
 $rebel: #3e1807;
 $woodsmoke: #161a1d;
+
+// Light
+$white: #fff;
+$white50: #ffffff80;
+$silver-chalice: #a9a9a9;
+
+// Text
+$text-disabled: #666;
+$text-lightest: whitesmoke;
+$text-lighter: #eee;
+$text-light: #ccc;
+$text-light-fade-up: -webkit-linear-gradient(270deg, $white 0%, $silver-chalice 85%);

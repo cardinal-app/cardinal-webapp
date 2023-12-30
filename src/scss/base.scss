@@ -4,7 +4,11 @@
 
 $landing-image: url('../assets/rolling-hills.png');
 $drop-shadow: 0 .5rem 2rem -.5rem #000000BF;
+$small-screen: 1500px;
+$ease-in: .15s ease-in-out;
+$default-text: 12px;
 
 * {
   font-family: Montserrat, serif;
+  letter-spacing: 1px;
 }

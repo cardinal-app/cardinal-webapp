@@ -14,6 +14,12 @@ h1 {
   font-weight: $semi-bold;
   user-select: none;
   letter-spacing: 4rem;
+
+  @media (max-width: $small-screen) {
+    font-size: 10rem;
+    letter-spacing: 2.5rem;
+    top: 5%;
+  }
 }
 
 section {
@@ -40,11 +46,93 @@ section {
   h2 {
     text-transform: uppercase;
     font-weight: 600;
-    margin: 1rem;
+    margin: 1rem 0 2rem 0;
     letter-spacing: .25rem;
     background: -webkit-linear-gradient(30deg, $valencia 0%, $zest 100%);
     filter: drop-shadow(0 0 .5rem $black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  form {
+
+    p {
+      font-size: 11px;
+      margin-top: .5rem;
+      font-weight: $medium;
+      background: $text-light-fade-up;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      span {
+        background: -webkit-linear-gradient(0deg, $zest 0%, $zest 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        font-weight: $bold;
+        cursor: pointer;
+      }
+    }
+
+    .form-control {
+      border: none;
+      background: none;
+
+      input {
+        background: none;
+        outline: none;
+        margin-top: .5rem;
+        text-align: center;
+        width: $field-width;
+        font-size: $default-text;
+        border: 1px solid $zest50;
+        border-radius: .75rem;
+        padding: 1rem 0;
+        letter-spacing: 2px;
+        background: $crowshead;
+        background: $text-light-fade-up;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        box-shadow: $drop-shadow;
+        opacity: .85;
+
+        &:focus {
+          border: 1px solid $zest75;
+          transition: $ease-in;
+          opacity: 1;
+        }
+
+        &::placeholder {
+          background: $text-light-fade-up;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+
+    button {
+      width: $field-width;
+      font-size: $default-text;
+      font-weight: $bold;
+      box-shadow: $drop-shadow;
+      transition: $ease-in;
+      letter-spacing: 1.75px;
+      background: $valencia;
+      color: $crowshead;
+      background: linear-gradient(90deg, $valencia 20%, $zest 100%);
+      border: 1px solid $zest75;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      border-radius: .75rem;
+      margin-top: 1.25rem;
+      opacity: .95;
+
+      &:hover:not(.disabled) { // TODO :: impl .disabled
+        cursor: pointer;
+        background: linear-gradient(90deg, $valencia 0%, $zest 80%);
+        transform: scale(1.0125);
+        opacity: 1;
+      }
+    }
   }
 }
