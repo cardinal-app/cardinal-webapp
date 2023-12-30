@@ -5,14 +5,17 @@
   <h2>Login</h2>
   <form action="" method="post" id="login-form">
     <div class="form-control">
+      <fa-icon class="icon" [icon]="faUser"></fa-icon>
       <input type="text"
              placeholder="Username"
              id="username"
              name="username"
              autofocus
+             spellcheck="false"
              autocomplete="off">
     </div>
     <div class="form-control">
+      <fa-icon class="icon" [icon]="faLock"></fa-icon>
       <input type="password"
              placeholder="Password"
              id="password"
@@ -21,7 +24,9 @@
              autocomplete="off">
       <p>Lost Password? <span>reset</span></p>
     </div>
-    <button>Enter</button>
-    <p>Don’t have an account? <span>register</span></p>
+    <div class="form-control">
+      <button type="button" (click)="login()">Enter</button>
+      <p>Don’t have an account? <span>register</span></p>
+    </div>
   </form>
 </section>

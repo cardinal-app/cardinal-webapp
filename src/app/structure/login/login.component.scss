@@ -48,7 +48,7 @@ section {
     font-weight: 600;
     margin: 1rem 0 2rem 0;
     letter-spacing: .25rem;
-    background: -webkit-linear-gradient(30deg, $valencia 0%, $zest 100%);
+    background: linear-gradient(90deg, $valencia 20%, $zest 100%);
     filter: drop-shadow(0 0 .5rem $black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -78,6 +78,18 @@ section {
       border: none;
       background: none;
 
+      &:has(button) {
+        position: absolute;
+        bottom: 3rem;
+      }
+
+      .icon {
+        position: absolute;
+        color: $zest;
+        left: 6.25rem;
+        margin-top: 1.25rem;
+      }
+
       input {
         background: none;
         outline: none;
@@ -88,7 +100,7 @@ section {
         border: 1px solid $zest50;
         border-radius: .75rem;
         padding: 1rem 0;
-        letter-spacing: 2px;
+        letter-spacing: 1.75px;
         background: $crowshead;
         background: $text-light-fade-up;
         -webkit-background-clip: text;
@@ -103,9 +115,13 @@ section {
         }
 
         &::placeholder {
-          background: $text-light-fade-up;
+          background: -webkit-linear-gradient(270deg, $silver-chalice 0%, $text-disabled 85%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+        }
+
+        &#username {
+          text-transform: capitalize;
         }
       }
     }
