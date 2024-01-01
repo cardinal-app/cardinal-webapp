@@ -6,9 +6,9 @@ h1 {
   top: 7.5%;
   position: absolute;
   width: 100%;
-  opacity: .15;
+  opacity: .25;
   font-size: 12rem;
-  background: -webkit-linear-gradient(270deg, $valencia00 20%, $valencia 50%, $valencia00 100%);
+  background: -webkit-linear-gradient(270deg, $valencia 0%, $valencia00 85%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: $semi-bold;
