@@ -36,3 +36,35 @@ div {
   background: $black;
   background: linear-gradient(25deg, $black 0%, $black00 60%);
 }
+
+h1 {
+  position: absolute;
+  margin: auto;
+  top: 30vh;
+  left: 0;
+  right: 0;
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12rem;
+  letter-spacing: 1.5rem;
+  font-weight: $semi-bold;
+  background: -webkit-linear-gradient(90deg, $white00 0%, $white 30%, $white 70%, $white00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (max-width: $small-screen) {
+    font-size: 8.5rem;
+    letter-spacing: 1rem;
+  }
+}
+
+img {
+  filter: drop-shadow(0 0 4rem $black25);
+  position: absolute;
+  margin: auto;
+  top: -10%;
+  left: 0;
+  right: -30%;
+  bottom: 0;
+}
