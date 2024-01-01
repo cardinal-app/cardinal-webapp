@@ -15,8 +15,16 @@ div {
 
 #orange-overlay {
   background: $valencia;
-  background: linear-gradient(65deg, $woodsmoke 15%, $valencia 65%, $buckthorn 100%);
-  opacity: 85%;
+  background: linear-gradient(65deg, $woodsmoke 15%, $valencia 50%, $zest 100%);
+  opacity: .9;
+  filter: brightness(95%);
+}
+
+#yellow-overlay {
+  background: $buckthorn;
+  background: radial-gradient(ellipse at right top, $white 0%, $beach 5%, $beach75 10%, $buckthorn00 45%);
+  opacity: .8;
+  filter: brightness(120%);
 }
 
 #dark-overlay-1 {
