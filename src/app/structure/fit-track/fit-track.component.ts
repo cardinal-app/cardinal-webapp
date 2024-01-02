@@ -26,7 +26,15 @@ export class FitTrackComponent implements OnInit {
   // Signals :: Computed
   historicalRunning = computed(() => this.weeks().map(week => week.running));
 
+  protected content: [string, string][];
+
   constructor(private fitTrackService: FitTrackService) {
+    this.content = [
+      ['General', 'Core fitness of a non-specialised nature'],
+      ['Resistance', 'Lifting weight with a focus on strength over range'],
+      ['Running', 'Runs of varying distance with a focus on pace'],
+    ];
+
     // Signals :: Effects
     effect(() => {
       console.log(`[constructor] List size: ${this.weeks().length}`);

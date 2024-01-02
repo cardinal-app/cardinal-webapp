@@ -8,4 +8,12 @@
   @if (!!title) {
     <h1>{{ title }}</h1>
   }
+  <div class="items">
+    @for (item of content; track item) {
+      <div class="item">
+        <h3>{{ item[0] }}</h3>
+        <p>{{ item[1] }}</p>
+      </div>
+    }
+  </div>
 </section>

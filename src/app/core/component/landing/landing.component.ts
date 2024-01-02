@@ -11,5 +11,6 @@ import { CommonModule } from '@angular/common';
 export class LandingComponent {
 
   @Input() title: string = '';
+  @Input() content: [string, string][] = [];
 
 }
