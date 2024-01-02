@@ -20,7 +20,8 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   login() {
-    this.router.navigate(['/home']);
+    localStorage.setItem('authToken', 'jwt_t0k3n');
+    this.router.navigate(['/']);
   }
 
 }

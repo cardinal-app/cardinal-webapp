@@ -28,6 +28,7 @@
       - y
     - core (global functionality) [tested with Jest?]
       - components
+      - guards
       - model
       - pipes
       - services

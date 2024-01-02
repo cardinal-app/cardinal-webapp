@@ -1,18 +1,12 @@
 @import 'base';
 
-section {
-  margin: 4rem 2rem;
-}
+nav {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
 
-.historical-data {
-  p {
-    cursor: pointer;
+  img {
+    height: 2rem;
   }
 }
-
-img {
-  margin-left: 1rem;
-  height: 2rem;
-  width: 2rem;
-}
-// Remove?^^
