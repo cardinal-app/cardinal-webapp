@@ -1,4 +1,4 @@
-import {mapToCanActivate, Routes} from '@angular/router';
+import { Routes} from '@angular/router';
 import { FitTrackComponent } from "./structure/fit-track/fit-track.component";
 import { HomeComponent } from "./structure/home/home.component";
 import { XComponent } from "./structure/x/x.component";

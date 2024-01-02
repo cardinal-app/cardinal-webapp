@@ -1,0 +1,13 @@
+<section>
+  <div class="accordion-header" (click)="toggleAccordion()">
+    <h2 [class.expanded]="expanded">
+      <fa-icon class="icon" [icon]="expanded ? faCaretDown : faCaretRight"></fa-icon>
+      {{ title }}
+    </h2>
+  </div>
+  <div class="accordion-content">
+    @if (expanded) {
+      <ng-content></ng-content>
+    }
+  </div>
+</section>

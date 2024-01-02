@@ -1,0 +1,28 @@
+@import "base";
+
+section {
+  margin-bottom: 4rem;
+
+  .accordion-header {
+    cursor: pointer;
+    padding-top: 2rem;
+    border-top: 1px solid $pearl25;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      font-weight: $semi-bold;
+      letter-spacing: 2px;
+      color: $pearl;
+
+      &.expanded {
+        color: $walnut;
+      }
+    }
+  }
+
+  .accordion-content {
+    margin-top: 2rem;
+  }
+
+}

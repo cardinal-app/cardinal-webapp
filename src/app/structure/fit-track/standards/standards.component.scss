@@ -1,0 +1,40 @@
+@import 'base';
+
+section {
+  background: $black;
+  color: $white;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .centre {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+
+    h1 {
+      font-weight: $medium;
+      font-size: 1.5rem;
+      letter-spacing: .25rem;
+
+    }
+
+    h2 {
+      font-weight: $light;
+      font-size: $default-text;
+      letter-spacing: .125rem;
+      opacity: .7;
+    }
+  }
+}
+
+.pending {
+  margin-top: -3rem;
+  color: $white;
+  width: 100%;
+  text-align: center;
+  font-size: $default-text;
+  opacity: .7;
+}
