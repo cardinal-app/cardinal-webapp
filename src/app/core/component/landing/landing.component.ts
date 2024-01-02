@@ -10,6 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class LandingComponent {
 
-  @Input() full: boolean = true;
+  @Input() title: string = '';
 
 }

@@ -4,12 +4,14 @@
       <img src="/assets/badge.png">
     </div>
     <div class="centre">
-      <a routerLink="/">Home</a>
-      <a routerLink="/x">X</a>
-      <a routerLink="/y">Y</a>
-      <a routerLink="/fit-track">Fit Track</a>
+      <a class="active" routerLink="/"><fa-icon class="icon" [icon]="faHouse"></fa-icon></a>
+      <a routerLink="/x"><fa-icon class="icon" [icon]="faX"></fa-icon></a>
+      <a routerLink="/y"><fa-icon class="icon" [icon]="faY"></fa-icon></a>
+      <a routerLink="/fit-track"><fa-icon class="icon" [icon]="faPersonRunning"></fa-icon></a>
     </div>
-    <div class="right"></div>
+    <div class="right">
+      <fa-icon id="user-icon" [icon]="faUser"></fa-icon>
+    </div>
   </nav>
 }
 <router-outlet></router-outlet>

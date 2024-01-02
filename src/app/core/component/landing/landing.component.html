@@ -1,10 +1,11 @@
-<div id="background-image"></div>
-<div id="orange-overlay"></div>
-<div id="yellow-overlay"></div>
-<div id="dark-overlay-1"></div>
-<div id="dark-overlay-2"></div>
+<section>
+  <div id="background-image"></div>
+  <div id="orange-overlay"></div>
+  <div id="yellow-overlay"></div>
+  <div id="dark-overlay-1"></div>
+  <div id="dark-overlay-2"></div>
 
-@if (full) {
-  <h1>Cardinal</h1>
-<!--  <img id="logo" alt="cardinal logo" src="/assets/logo-landing.png">-->
-}
+  @if (!!title) {
+    <h1>{{ title }}</h1>
+  }
+</section>

@@ -4,9 +4,33 @@ nav {
   position: absolute;
   top: 0;
   z-index: 1000;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .centre {
+    display: flex;
+    gap: 4rem;
+    height: 1.5rem;
+    align-items: center;
+
+    a {
+      color: $valencia;
+      filter: brightness(60%);
+      text-decoration: none;
+      opacity: .7;
+    }
+  }
+
+  .right {
+    color: $woodsmoke;
+    opacity: .7;
+  }
 
   img {
-    height: 2rem;
+    height: 1.5rem;
+    filter: brightness(10);
+    opacity: .7;
   }
 }
