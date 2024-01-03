@@ -1,13 +1,27 @@
 <landing title="Fit Track" [content]="content"></landing>
 <standards></standards>
-<section id="main">
+<main>
+  <header>
+    <p>Import</p>
+    <p>Export</p>
+    <p>Add Week</p>
+  </header>
+  <container>
+    <p>B14:W4</p>
+  </container>
+  <container>
     <accordion title="General">
       <general></general>
     </accordion>
+  </container>
+  <container>
     <accordion title="Resistance">
       <resistance></resistance>
     </accordion>
+  </container>
+  <container>
     <accordion title="Running">
       <running [historicalRunning]="historicalRunning()"></running>
     </accordion>
-</section>
+  </container>
+</main>

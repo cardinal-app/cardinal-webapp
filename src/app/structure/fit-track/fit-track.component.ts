@@ -10,11 +10,12 @@ import { FitTrackService } from "../../core/service/fit-track/fit-track.service"
 import { OrderWeeksPipe } from "../../core/pipe/order-weeks.pipe";
 import { LandingComponent } from "../../core/component/landing/landing.component";
 import {AccordionComponent} from "../../core/component/accordion/accordion.component";
+import {ContainerComponent} from "../../core/component/container/container.component";
 
 @Component({
   selector: 'fit-track',
   standalone: true,
-  imports: [CommonModule, FaIconComponent, OrderWeeksPipe, ResistanceComponent, GeneralComponent, StandardsComponent, RunningComponent, LandingComponent, AccordionComponent],
+  imports: [CommonModule, FaIconComponent, OrderWeeksPipe, ResistanceComponent, GeneralComponent, StandardsComponent, RunningComponent, LandingComponent, AccordionComponent, ContainerComponent],
   templateUrl: './fit-track.component.html',
   styleUrl: './fit-track.component.scss'
 })
