@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Signal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Chart } from 'chart.js/auto';
-import {Week} from "../../../core/model/fit-track/week";
+import { Week } from "../../../../core/model/fit-track/week";
 
 @Component({
   selector: 'visualisation',
@@ -12,7 +12,7 @@ import {Week} from "../../../core/model/fit-track/week";
 })
 export class VisualisationComponent implements OnInit {
 
-  @Input() weeks: Week[] = [new Week()];
+  @Input() weeks: Signal<Week[]> = signal([new Week()]);
 
   public chart: any;
 
@@ -21,9 +21,9 @@ export class VisualisationComponent implements OnInit {
   private weekVolumes: number[] = [];
 
   ngOnInit(): void {
-    this.weekBlocks = this.weeks.map(week => `B${week.block}:W${week.week}`);
-    this.weekVolumes = this.weeks.map(week => week.running.volume.miles);
-    this.averageVolume = this.weekVolumes.reduce((a, b) => { return a + b; }) / (this.weeks.length);
+    this.weekBlocks = this.weeks().map(week => `B${week.block}:W${week.week}`);
+    this.weekVolumes = this.weeks().map(week => week.running.volume);
+    this.averageVolume = this.weekVolumes.reduce((a, b) => { return a + b; }) / (this.weeks().length);
 
     this.createChart();
   }

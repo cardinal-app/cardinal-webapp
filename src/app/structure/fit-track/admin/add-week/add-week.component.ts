@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import {Component, EventEmitter, OnInit, Output, ViewChild} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
@@ -13,10 +13,11 @@ import { FitTrackService } from "../../../../core/service/fit-track/fit-track.se
   templateUrl: './add-week.component.html',
   styleUrl: './add-week.component.scss'
 })
-export class AddWeekComponent {
+export class AddWeekComponent implements OnInit {
 
   @Output() newWeek: EventEmitter<Week> = new EventEmitter();
   weekForm: FormGroup;
+  activeFormSection: number = 0;
 
   constructor(private formBuilder: FormBuilder,
               private fitTrackService: FitTrackService,
@@ -31,6 +32,10 @@ export class AddWeekComponent {
     });
   }
 
+  ngOnInit(): void {
+
+  }
+
   submitWeek(): void {
     console.log(this.weekForm.value); // TODO :: impl logging
 
@@ -43,4 +48,7 @@ export class AddWeekComponent {
     this.dialogRef.close(week);
   }
 
+  nextSection(): void {
+    this.activeFormSection += 1;
+  }
 }

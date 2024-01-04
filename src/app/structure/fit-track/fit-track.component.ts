@@ -25,9 +25,6 @@ export class FitTrackComponent implements OnInit {
   // Signals :: Writable
   weeks: WritableSignal<Week[]> = signal([new Week()]);
 
-  // Signals :: Computed
-  historicalRunning = computed(() => this.weeks().map(week => week.running));
-
   protected content: [string, string][];
 
   constructor(private fitTrackService: FitTrackService) {

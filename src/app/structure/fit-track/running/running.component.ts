@@ -1,12 +1,16 @@
-import {Component, computed, effect, Input, signal, Signal} from '@angular/core';
+import {Component, computed, effect, Input, signal, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Running } from "../../../core/model/fit-track/paradigm/running/running";
 import { faHandPointer, faFutbol, faHeartbeat } from "@fortawesome/free-solid-svg-icons";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import { OrderWeeksPipe } from "../../../core/pipe/order-weeks.pipe";
+import { VisualisationComponent } from "./visualisation/visualisation.component";
+import { Week } from "../../../core/model/fit-track/week";
 
 @Component({
   selector: 'running',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FaIconComponent, OrderWeeksPipe, VisualisationComponent],
   templateUrl: './running.component.html',
   styleUrl: './running.component.scss'
 })
@@ -15,7 +19,9 @@ export class RunningComponent {
   protected readonly faFutbol = faFutbol;
   protected readonly faHeartbeat = faHeartbeat;
 
-  @Input() historicalRunning: Signal<Running[]> = signal([]);
+  @Input() weeks: Signal<Week[]> = signal([]);
+  // Signals :: Computed
+  historicalRunning = computed(() => this.weeks().map(week => week.running));
 
   totalMiles = computed(() => this.calculateTotalMiles());
   totalKilometres = computed(() => 1.60934 * this.totalMiles());
