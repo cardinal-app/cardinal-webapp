@@ -1,4 +1,4 @@
-import {Component, computed, effect, Input} from '@angular/core';
+import {Component, computed, effect, Input, signal, Signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Running } from "../../../core/model/fit-track/paradigm/running/running";
 import { faHandPointer, faFutbol, faHeartbeat } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +15,7 @@ export class RunningComponent {
   protected readonly faFutbol = faFutbol;
   protected readonly faHeartbeat = faHeartbeat;
 
-  @Input() historicalRunning: Running[] = [];
+  @Input() historicalRunning: Signal<Running[]> = signal([]);
 
   totalMiles = computed(() => this.calculateTotalMiles());
   totalKilometres = computed(() => 1.60934 * this.totalMiles());
@@ -30,17 +30,17 @@ export class RunningComponent {
 
   calculateTotalMiles(): number {
     console.log(`[calculateTotalMiles] calculating ..`)
-    let n = this.historicalRunning.map((run: any) => run.volume.miles);
-    let miles = 0;
-    if (n.length > 0) {
-      miles = n.reduce(
+    const volumes = this.historicalRunning().map((run: Running) => run.volume);
+    let mileage = 0;
+    if (volumes.length > 0) {
+      mileage = volumes.reduce(
         (a, b) => {
           return a + b;
         });
     }
-    console.log(`[calculateTotalMiles] calculating .. there are [${miles}] miles done.`)
+    console.log(`[calculateTotalMiles] calculating .. there are [${mileage}] miles done.`)
 
-    return miles;
+    return mileage;
   }
 
   getLastWeekNumber(): number {
