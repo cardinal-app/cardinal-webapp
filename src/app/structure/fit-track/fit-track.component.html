@@ -1,14 +1,7 @@
 <landing title="Fit Track" [content]="content"></landing>
 <standards></standards>
 <main>
-  <header>
-    <p>Import</p>
-    <p>Export</p>
-    <p>Add Week</p>
-  </header>
-  <container>
-    <p>B14:W4</p>
-  </container>
+  <fit-track-admin (newWeek)="onWeekAdded($event)"></fit-track-admin>
   <container>
     <accordion title="General">
       <general></general>
@@ -21,7 +14,7 @@
   </container>
   <container>
     <accordion title="Running">
-      <running [historicalRunning]="historicalRunning()"></running>
+      <running [historicalRunning]="historicalRunning"></running>
     </accordion>
   </container>
 </main>

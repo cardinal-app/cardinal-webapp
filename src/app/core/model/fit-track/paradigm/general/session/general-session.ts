@@ -1,13 +1,13 @@
 import {Entity} from "../../../../entity";
 
 /**
- * Auxiliary Session Object
+ * General Session Object
  * @author J. R. Smith
  * @since 14/12/2023
  */
-export class AuxiliarySession extends Entity {
+export class GeneralSession extends Entity {
 
   type: string = '';
-  notes: string = '';
+  dataPoints: string[] = [];
 
 }

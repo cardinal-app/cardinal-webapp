@@ -1,4 +1,4 @@
-import {Misc} from "./paradigm/misc/misc";
+import {General} from "./paradigm/general/general";
 import {Resistance} from "./paradigm/resistance/resistance";
 import {Running} from "./paradigm/running/running";
 import {Entity} from "../entity";
@@ -13,8 +13,9 @@ export class Week extends Entity {
   block: number = 0;
   week: number = 0;
   weekCommencing: string = '';
+  weekNotes: string = '';
   flags: string[] = [];
-  misc: Misc = new Misc();
+  general: General = new General();
   resistance: Resistance = new Resistance();
   running: Running = new Running();
 

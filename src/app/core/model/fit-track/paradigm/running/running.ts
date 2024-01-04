@@ -1,5 +1,4 @@
 import {RunningSession} from "./session/running-session";
-import {Volume} from "./volume";
 import {Entity} from "../../../entity";
 
 /**
@@ -9,7 +8,7 @@ import {Entity} from "../../../entity";
  */
 export class Running extends Entity {
 
-  volume: Volume = new Volume();
+  volume: number = 0;
   sessions: RunningSession[] = [];
 
 }

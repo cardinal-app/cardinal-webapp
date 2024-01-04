@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Add New Week</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="weekForm">
+    <div class="form-group">
+      <label for="block">Block</label><br>
+      <input id="block" type="number" value="Block" formControlName="block"><br>
+      <label for="week">Week</label><br>
+      <input id="week" type="number" value="Week" formControlName="week">
+    </div>
+    <div class="form-group">
+      <h3>General</h3>
+    </div>
+    <div class="form-group">
+      <h3>Resistance</h3>
+    </div>
+    <div class="form-group" formGroupName="running">
+      <h3>Running</h3>
+      <label for="volume">Volume</label><br>
+      <input id="volume" type="number" value="Volume (miles)" formControlName="volume">
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click)="submitWeek()">Add</button>
+</mat-dialog-actions>
