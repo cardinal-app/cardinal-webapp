@@ -18,4 +18,12 @@ section {
     border-radius: 3.5rem 3.5rem 0 0;
     box-shadow: $drop-shadow;
   }
+
+  #wallet-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+  }
 }

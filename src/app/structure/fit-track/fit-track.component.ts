@@ -12,11 +12,13 @@ import { LandingComponent } from "../../core/component/landing/landing.component
 import { AccordionComponent } from "../../core/component/accordion/accordion.component";
 import { ContainerComponent } from "../../core/component/container/container.component";
 import { AdminComponent } from "./admin/admin.component";
+import {WalletComponent} from "../../core/component/wallet/wallet.component";
+import {SideBarComponent} from "../../core/component/side-bar/side-bar.component";
 
 @Component({
   selector: 'fit-track',
   standalone: true,
-  imports: [CommonModule, FaIconComponent, OrderWeeksPipe, ResistanceComponent, GeneralComponent, StandardsComponent, RunningComponent, LandingComponent, AccordionComponent, ContainerComponent, AdminComponent],
+  imports: [CommonModule, FaIconComponent, OrderWeeksPipe, ResistanceComponent, GeneralComponent, StandardsComponent, RunningComponent, LandingComponent, AccordionComponent, ContainerComponent, AdminComponent, WalletComponent, SideBarComponent],
   templateUrl: './fit-track.component.html',
   styleUrl: './fit-track.component.scss'
 })

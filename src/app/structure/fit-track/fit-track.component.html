@@ -1,20 +1,41 @@
-<landing title="Fit Track" [content]="content"></landing>
-<standards></standards>
-<main>
-  <fit-track-admin (newWeek)="onWeekAdded($event)"></fit-track-admin>
-  <container>
-    <accordion title="General">
-      <general></general>
-    </accordion>
-  </container>
-  <container>
-    <accordion title="Resistance">
-      <resistance></resistance>
-    </accordion>
-  </container>
-  <container>
-    <accordion title="Running">
-      <running [weeks]="weeks"></running>
-    </accordion>
-  </container>
-</main>
+<!--<landing title="Fit Track" [content]="content"></landing>-->
+<!--<standards></standards>-->
+<!--<main>-->
+<!--  <fit-track-admin (newWeek)="onWeekAdded($event)"></fit-track-admin>-->
+<!--  <container>-->
+<!--    <accordion title="General">-->
+<!--      <general></general>-->
+<!--    </accordion>-->
+<!--  </container>-->
+<!--  <container>-->
+<!--    <accordion title="Resistance">-->
+<!--      <resistance></resistance>-->
+<!--    </accordion>-->
+<!--  </container>-->
+<!--  <container>-->
+<!--    <accordion title="Running">-->
+<!--      <running [weeks]="weeks"></running>-->
+<!--    </accordion>-->
+<!--  </container>-->
+<!--</main>-->
+<wallet>
+  <side-bar title="Fit Track"></side-bar>
+  <section>
+    <fit-track-admin (newWeek)="onWeekAdded($event)"></fit-track-admin>
+    <container>
+      <accordion title="General">
+        <general></general>
+      </accordion>
+    </container>
+    <container>
+      <accordion title="Resistance">
+        <resistance></resistance>
+      </accordion>
+    </container>
+    <container>
+      <accordion title="Running">
+        <running [weeks]="weeks"></running>
+      </accordion>
+    </container>
+  </section>
+</wallet>
