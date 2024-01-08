@@ -9,6 +9,12 @@ $ease-in: .15s ease-in-out;
 $default-text: 12px;
 
 * {
+  margin: 0;
   font-family: Montserrat, serif;
   letter-spacing: 1px;
+}
+
+body {
+  background: $black;
+  background: linear-gradient(0deg, $black 40%, $mirage 100%);
 }

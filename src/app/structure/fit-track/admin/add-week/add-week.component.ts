@@ -46,6 +46,7 @@ export class AddWeekComponent implements OnInit {
 
     this.fitTrackService.addWeek(week);
     this.dialogRef.close(week);
+    this.activeFormSection = 0;
   }
 
   nextSection(): void {

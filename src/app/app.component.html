@@ -1,18 +1,33 @@
 @if (!router.url.includes('/auth')) {
-  <nav>
+  <header>
     <div class="left">
-      <img src="/assets/badge.png">
-    </div>
-    <div class="centre">
-      <a class="active" routerLink="/"><fa-icon class="icon" [icon]="faHouse"></fa-icon></a>
-      <a routerLink="/x"><fa-icon class="icon" [icon]="faX"></fa-icon></a>
-      <a routerLink="/y"><fa-icon class="icon" [icon]="faY"></fa-icon></a>
-      <a routerLink="/fit-track"><fa-icon class="icon" [icon]="faPersonRunning"></fa-icon></a>
+      <img id="badge" src="/assets/badge.png">
     </div>
     <div class="right">
-      <fa-icon id="user-icon" [icon]="faUser"></fa-icon>
+      <fa-icon class="icon" [icon]="faSearch"></fa-icon>
+      <fa-icon class="icon" [icon]="faBell"></fa-icon>
+      <fa-icon class="icon" [icon]="faQuestion"></fa-icon>
+      <fa-icon class="icon" [icon]="faCog"></fa-icon>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-item">
+      <a routerLink="/home" routerLinkActive="active">
+        <fa-icon class="icon" [icon]="faHouse"></fa-icon>
+        <p>Home</p>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a routerLink="/fit-track" routerLinkActive="active">
+        <fa-icon class="icon" [icon]="faPersonRunning"></fa-icon>
+        <p>Fit Track</p>
+      </a>
     </div>
   </nav>
+  <div class="user">
+    <img id="avatar" src="/assets/avatar.png">
+  </div>
 }
 <footer><p>Jrsmth 2024</p></footer>
 <router-outlet></router-outlet>

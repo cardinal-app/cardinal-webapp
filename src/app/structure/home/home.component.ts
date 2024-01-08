@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {LandingComponent} from "../../core/component/landing/landing.component";
+import { WalletComponent } from "../../core/component/wallet/wallet.component";
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [CommonModule, LandingComponent],
+  imports: [CommonModule, LandingComponent, WalletComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
