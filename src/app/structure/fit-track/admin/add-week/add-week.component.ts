@@ -25,6 +25,8 @@ export class AddWeekComponent implements OnInit {
     this.weekForm = this.formBuilder.group({
       block: ['', [Validators.required]],
       week: ['', [Validators.required]],
+      weekCommencing: ['', [Validators.required]],
+      weekNotes: ['', [Validators.required]],
 
       running: this.formBuilder.group({
         volume: ['', [Validators.required]],

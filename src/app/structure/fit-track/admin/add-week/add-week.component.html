@@ -5,7 +5,11 @@
       <label for="block">Block</label><br>
       <input id="block" type="number" value="Block" formControlName="block"><br>
       <label for="week">Week</label><br>
-      <input id="week" type="number" value="Week" formControlName="week">
+      <input id="week" type="number" value="Week" formControlName="week"><br>
+      <label for="week-commencing">Week Commencing</label><br>
+      <input id="week-commencing" type="date" value="Week Commencing" formControlName="weekCommencing"><br>
+      <label for="week-notes">Week Notes</label><br>
+      <input id="week-notes" type="text" value="Week Notes" formControlName="weekNotes"><br>
     </div>
     <div class="form-group" id="general" [class.active]="activeFormSection == 1">
       <h3>General</h3>
@@ -16,7 +20,7 @@
     <div class="form-group" id="running" formGroupName="running" [class.active]="activeFormSection == 3">
       <h3>Running</h3>
       <label for="volume">Volume</label><br>
-      <input id="volume" type="number" value="Volume (miles)" formControlName="volume">
+      <input id="volume" type="number" value="Volume (miles)" formControlName="volume"><br>
     </div>
   </form>
 </mat-dialog-content>
