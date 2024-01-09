@@ -5,11 +5,13 @@ import { MatButtonModule } from "@angular/material/button";
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Week } from "../../../../core/model/fit-track/week";
 import { FitTrackService } from "../../../../core/service/fit-track/fit-track.service";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 
 @Component({
   selector: 'add-week',
   standalone: true,
-  imports: [CommonModule, MatDialogActions, MatDialogContent, MatDialogTitle, MatButtonModule, MatDialogClose, ReactiveFormsModule],
+  imports: [CommonModule, MatDialogActions, MatDialogContent, MatDialogTitle, MatButtonModule, MatDialogClose, ReactiveFormsModule, MatInputModule, MatSelectModule],
   templateUrl: './add-week.component.html',
   styleUrl: './add-week.component.scss'
 })
@@ -18,6 +20,7 @@ export class AddWeekComponent implements OnInit {
   @Output() newWeek: EventEmitter<Week> = new EventEmitter();
   weekForm: FormGroup;
   activeFormSection: number = 0;
+  flagList: string[] = ['ILL', 'IN', 'LIGHT', 'OUT'];
 
   constructor(private formBuilder: FormBuilder,
               private fitTrackService: FitTrackService,
@@ -27,9 +30,13 @@ export class AddWeekComponent implements OnInit {
       week: ['', [Validators.required]],
       weekCommencing: ['', [Validators.required]],
       weekNotes: ['', [Validators.required]],
+      flags: [''],
 
       running: this.formBuilder.group({
         volume: ['', [Validators.required]],
+        session: this.formBuilder.group({
+
+        })
       })
     });
   }
@@ -53,5 +60,9 @@ export class AddWeekComponent implements OnInit {
 
   nextSection(): void {
     this.activeFormSection += 1;
+  }
+
+  prevSection(): void {
+    this.activeFormSection -= 1;
   }
 }

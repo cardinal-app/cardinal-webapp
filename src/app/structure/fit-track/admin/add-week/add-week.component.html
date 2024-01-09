@@ -10,6 +10,22 @@
       <input id="week-commencing" type="date" value="Week Commencing" formControlName="weekCommencing"><br>
       <label for="week-notes">Week Notes</label><br>
       <input id="week-notes" type="text" value="Week Notes" formControlName="weekNotes"><br>
+      <mat-form-field>
+        <mat-label>Flags</mat-label>
+        <mat-select formControlName="flags" multiple>
+          <mat-select-trigger>
+            {{weekForm.controls['flags'].value?.[0] || ''}}
+            @if ((weekForm.controls['flags'].value?.length || 0) > 1) {
+              <span class="example-additional-selection">
+          (+{{( weekForm.controls['flags'].value?.length || 0) - 1 }} {{ weekForm.controls['flags'].value?.length === 2 ? 'other' : 'others' }})
+        </span>
+            }
+          </mat-select-trigger>
+          @for (flag of flagList; track flag) {
+            <mat-option [value]="flag">{{ flag }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
     </div>
     <div class="form-group" id="general" [class.active]="activeFormSection == 1">
       <h3>General</h3>
@@ -27,5 +43,6 @@
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
 <!--  <button mat-button [mat-dialog-close]="true" (click)="activeFormSection == 3 ? submitWeek() : nextSection()">{{ activeFormSection == 3 ? 'Add' : 'Next' }}</button>-->
+  <button mat-button *ngIf="activeFormSection > 0" (click)="prevSection()">Previous</button>
   <button mat-button (click)="activeFormSection == 3 ? submitWeek() : nextSection()">{{ activeFormSection == 3 ? 'Add' : 'Next' }}</button>
 </mat-dialog-actions>
