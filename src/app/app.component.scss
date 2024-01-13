@@ -44,7 +44,7 @@ nav {
 
     a {
       text-decoration: none;
-      color: $white50;
+      color: $text-dark;
 
       &.active {
         color: $mirage;
@@ -75,7 +75,7 @@ nav {
     p {
       font-size: 9px;
       margin-top: .25rem;
-      color: $white50;
+      color: $text-dark;
     }
 
     &:hover {

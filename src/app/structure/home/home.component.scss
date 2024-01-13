@@ -48,23 +48,25 @@ section {
       margin-top: 4rem;
 
       .item {
-        color: $white;
+        color: $white75;
         display: flex;
         gap: 1rem;
         flex: 1;
-        width: 320px;
+        width: 20rem;
+        cursor: pointer;
 
         .icon {
-          padding: 2rem;
-          border-radius: .25rem;
-          border: 1px solid $white50;
-          background: $white25;
+          padding: 2rem 2.25rem;
+          border-radius: .75rem;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: linear-gradient(45deg, #ffffff00 0%, #ffffff0c 100%);
+          color: $white75;
         }
 
         .item-description {
           .item-header {
             letter-spacing: 2px;
-            margin-bottom: 1rem;
+            margin: .75rem 0 .5rem 0;
           }
 
           .item-body {

@@ -8,8 +8,12 @@ export class AuthenticationService {
 
   constructor(private localStorage: LocalStorageService) {}
 
-  hasValidAuthToken() {
+  hasValidToken() {
     return !!this.localStorage.get('authToken');
+  }
+
+  removeToken(): void {
+    this.localStorage.remove('authToken');
   }
 
 }
