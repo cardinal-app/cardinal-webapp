@@ -1,15 +1,54 @@
 <wallet>
   <section>
     <div id="hero">
-      <h1>Cardinal</h1>
-      <h2>/ˈkɑːdɪnəl/ Of the greatest importance; <br/> fundamental.</h2>
+      <div id="title">
+        <h1>Cardinal</h1>
+        <h2>/ˈkɑːdɪnəl/ Of the greatest importance; <br/> fundamental.</h2>
+      </div>
       <div id="content">
+        <div class="row">
+          <div class="item" routerLink="/pending">
+            <fa-icon class="icon" [icon]="faPencil"></fa-icon>
+            <div class="item-description">
+              <p class="item-header">Author</p>
+              <p class="item-body">Support self-authorship by way of note keeping</p>
+            </div>
+          </div>
+          <div class="item" routerLink="/pending">
+            <fa-icon class="icon" [icon]="faCoins"></fa-icon>
+            <div class="item-description">
+              <p class="item-header">Finance</p>
+              <p class="item-body">Plan your budget and project future savings</p>
+            </div>
+          </div>
+          <div class="item" routerLink="/pending">
+            <fa-icon class="icon" [icon]="faList"></fa-icon>
+            <div class="item-description">
+              <p class="item-header">Todo</p>
+              <p class="item-body">Digitise your task list and track completed items</p>
+            </div>
+          </div>
+        </div>
         <div class="row">
           <div class="item" routerLink="/fit-track">
             <fa-icon class="icon" [icon]="faPersonRunning"></fa-icon>
             <div class="item-description">
               <p class="item-header">Fit Track</p>
               <p class="item-body">Track completed training and progress towards goals</p>
+            </div>
+          </div>
+          <div class="item" routerLink="/pending">
+            <fa-icon class="icon" [icon]="faCameraRetro"></fa-icon>
+            <div class="item-description">
+              <p class="item-header">Retro</p>
+              <p class="item-body">Set goals and assess the past week for ways to improve</p>
+            </div>
+          </div>
+          <div class="item" routerLink="/pending">
+            <fa-icon class="icon" [icon]="faHammer"></fa-icon>
+            <div class="item-description">
+              <p class="item-header">Work Log</p>
+              <p class="item-body">Track work done to assess productivity over time</p>
             </div>
           </div>
         </div>

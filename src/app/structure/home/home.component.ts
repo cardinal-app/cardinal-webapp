@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {LandingComponent} from "../../core/component/landing/landing.component";
+import { LandingComponent} from "../../core/component/landing/landing.component";
 import { WalletComponent } from "../../core/component/wallet/wallet.component";
-import {faPersonRunning} from "@fortawesome/free-solid-svg-icons";
-import {FaIconComponent} from "@fortawesome/angular-fontawesome";
-import {RouterLink} from "@angular/router";
+import { faCameraRetro, faCoins, faHammer, faList, faPencil, faPersonRunning } from "@fortawesome/free-solid-svg-icons";
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'home',
@@ -16,6 +16,12 @@ import {RouterLink} from "@angular/router";
 export class HomeComponent {
 
   protected content: [string, string][];
+  protected readonly faPersonRunning = faPersonRunning;
+  protected readonly faPencil = faPencil;
+  protected readonly faCameraRetro = faCameraRetro;
+  protected readonly faCoins = faCoins;
+  protected readonly faList = faList;
+  protected readonly faHammer = faHammer;
 
   constructor() {
     this.content = [
@@ -25,5 +31,4 @@ export class HomeComponent {
     ];
   }
 
-  protected readonly faPersonRunning = faPersonRunning;
 }
