@@ -3,7 +3,7 @@
 section {
   height: 100%;
   width: 20rem;
-  background: linear-gradient(0deg, $black 20%, $valencia50 50%, $zest75 90%, $zest 100%);
+  background: linear-gradient(0deg, $valencia50 0%, $valencia 50%, $zest 100%);
   border-radius: 3.5rem 0 0 0;
   position: absolute;
   top: 0;
@@ -12,11 +12,37 @@ section {
   z-index: 100;
 
   h1 {
-    background: -webkit-linear-gradient(90deg, $white00 0%, $white 30%, $white 70%, $white00 100%);
+    background: -webkit-linear-gradient(90deg, $white00 0%, $white 15%, $white 85%, $white00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1.25rem;
-    margin: 2.75rem 3rem;
-    letter-spacing: 1px;
+    margin: 3rem 3rem 2rem 3rem;
+    letter-spacing: 2px;
+    font-weight: $semi-bold;
+  }
+
+  hr {
+    color: $white;
+    opacity: .25;
+    width: 75%;
+    margin: auto;
+  }
+
+  nav {
+    margin: 2rem 3rem;
+
+    p {
+      color: $robin;
+      cursor: pointer;
+      transition: .1s;
+      margin: 1.5rem 0;
+      font-weight: $bold;
+      font-size: 14px;
+      opacity: .85;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }
