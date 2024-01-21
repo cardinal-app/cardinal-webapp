@@ -1,3 +1,4 @@
+@import 'animation';
 @import 'colour';
 @import 'font';
 @import 'spacing';
@@ -7,6 +8,7 @@ $drop-shadow: 0 .5rem 2rem -.5rem #000000BF;
 $small-screen: 1600px;
 $ease-in: .15s ease-in-out;
 $default-text: 12px;
+$ease-in: .15s ease-in-out;
 
 * {
   margin: 0;
