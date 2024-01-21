@@ -1,0 +1,31 @@
+@import "base";
+
+div {
+  display: flex;
+  justify-content: left;
+  gap: .75rem;
+  background: -webkit-linear-gradient(90deg, $denim 0%, $havelock 100%);
+  padding: .375rem 2rem .375rem .5rem;
+  border-radius: 2rem;
+  width: max-content;
+
+  .icon {
+    background-color: $white;
+    border-radius: 50%;
+    height: 2.5rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: color-mix(in srgb, $denim 50%, $havelock);
+  }
+
+  span {
+    color: $white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 2.5rem;
+  }
+}

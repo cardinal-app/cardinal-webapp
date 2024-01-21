@@ -1,8 +1,10 @@
+@import "base";
+
 section {
-  margin: 0 8rem;
+  margin: 0 $wallet-gutter;
 
   .row {
-    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 
   .column {

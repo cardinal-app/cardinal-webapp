@@ -17,4 +17,5 @@ $default-text: 12px;
 body {
   background: $black;
   background: linear-gradient(0deg, $black 40%, $mirage 100%);
+  overflow: hidden;
 }
