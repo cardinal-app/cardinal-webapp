@@ -1,14 +1,19 @@
-name: End-to-end tests
-on: [push]
+name: main
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+permissions:
+  contents: write
 jobs:
-  cypress-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm run start
-          wait-on: http://localhost:4200
+#  test:
+#    name: test
+#    uses: ./.github/workflows/step-test.yaml
+  release:
+#    needs: test
+    name: release
+    uses: ./.github/workflows/step-release.yaml
+  merge:
+    needs: release
+    name: merge
+    uses: ./.github/workflows/step-merge.yaml
