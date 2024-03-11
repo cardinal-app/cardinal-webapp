@@ -8,7 +8,7 @@ export class AuthGuard {
   constructor (private authService: AuthenticationService, private router: Router) {}
 
   canActivate(): boolean {
-    const userAuthenticated = this.authService.hasValidAuthToken();
+    const userAuthenticated = this.authService.hasValidToken();
 
     if (!userAuthenticated) {
       this.router.navigate(

@@ -19,14 +19,44 @@
       </a>
     </div>
     <div class="nav-item">
+      <a routerLink="/pending" routerLinkActive="active">
+        <fa-icon class="icon" [icon]="faPencil"></fa-icon>
+        <p>Author</p>
+      </a>
+    </div>
+    <div class="nav-item">
       <a routerLink="/fit-track" routerLinkActive="active">
         <fa-icon class="icon" [icon]="faPersonRunning"></fa-icon>
         <p>Fit Track</p>
       </a>
     </div>
+    <div class="nav-item">
+      <a routerLink="/pending" routerLinkActive="active">
+        <fa-icon class="icon" [icon]="faCoins"></fa-icon>
+        <p>Finance</p>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a routerLink="/pending" routerLinkActive="active">
+        <fa-icon class="icon" [icon]="faCameraRetro"></fa-icon>
+        <p>Retro</p>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a routerLink="/pending" routerLinkActive="active">
+        <fa-icon class="icon" [icon]="faList"></fa-icon>
+        <p>Todo</p>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a routerLink="/pending" routerLinkActive="active">
+        <fa-icon class="icon" [icon]="faHammer"></fa-icon>
+        <p>Work Log</p>
+      </a>
+    </div>
   </nav>
-  <div class="user">
-    <img id="avatar" src="/assets/avatar.png">
+  <div class="user" (click)="logout()">
+    <img id="avatar" alt="avatar" src="/assets/avatar.png">
   </div>
 }
 <footer><p>Jrsmth 2024</p></footer>

@@ -1,19 +1,8 @@
 @import "base";
 
-header {
+section {
+  padding: 0 $wallet-gutter;
+  height: 6.5rem;
   display: flex;
-  gap: 2rem;
-  border-bottom: 1px solid $pearl25;
-  width: 100%;
-  justify-content: flex-end;
   align-items: center;
-  padding-right: 8rem;
-
-  p {
-    margin: 1rem;
-    font-size: $default-text;
-    font-weight: $semi-bold;
-    color: $pearl;
-    cursor: pointer;
-  }
 }

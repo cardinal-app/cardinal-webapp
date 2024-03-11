@@ -3,7 +3,15 @@
 section {
   background-color: $alabaster;
   left: 20rem;
+  height: 100%;
   width: calc(100% - 20rem);
   border-radius: 0 3.5rem 0 0;
   position: absolute;
+  overflow-y: auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -12,5 +12,6 @@ export class ContainerComponent {
 
   @Input() rows: string = '1';
   @Input() columns: string = '1';
+  @Input() short: boolean = false;
 
 }

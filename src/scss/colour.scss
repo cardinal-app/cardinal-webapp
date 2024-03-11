@@ -1,4 +1,8 @@
 
+// Blue
+$denim: #1974b5;
+$havelock: #64ade1;
+
 // Orange
 $valencia: #d45b4a;
 $valencia00: #d45b4a00;
@@ -9,6 +13,7 @@ $buckthorn00: #fdb35800;
 $buckthorn75: #fdb358bf;
 $beach: #ffffbf;
 $beach75: #ffffbfbf;
+$robin: #77331d;
 $zest: #e57028;
 $zest00: #e5702800;
 $zest50: #e5702880;
@@ -27,6 +32,7 @@ $rebel: #3e1807;
 $rebel00: #3e180700;
 $woodsmoke: #161a1d;
 $walnut: #433228;
+$walnut50: #43322880;
 $mirage: #1a262e;
 
 // Light
@@ -34,13 +40,15 @@ $white: #fff;
 $white00: #ffffff00;
 $white25: #ffffff40;
 $white50: #ffffff80;
+$white75: #ffffffbf;
 $silver-chalice: #a9a9a9;
 $alabaster: #f8f8f8;
 $pearl: #b0b0c2;
 $pearl25: #b0b0c240;
 
 // Text
-$text-dark: $walnut;
+$text-darker: $walnut;
+$text-dark: #858585;
 $text-disabled: #888;
 $text-lightest: whitesmoke;
 $text-lighter: #eee;

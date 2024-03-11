@@ -7,11 +7,16 @@ section {
   height: 100%;
 
   h1 {
-    margin-top: -8rem;
+    margin-top: -4rem;
+
+    @media (max-width: $small-screen) {
+      margin-top: -2rem;
+    }
+
     color: $white;
     text-transform: uppercase;
     font-size: 10rem;
-    letter-spacing: 1.5rem;
+    letter-spacing: 2.5rem;
     font-weight: $semi-bold;
     background: -webkit-linear-gradient(90deg, $white00 0%, $white 30%, $white 70%, $white00 100%);
     -webkit-background-clip: text;
@@ -38,33 +43,44 @@ section {
   }
 
   #hero {
-    width: min-content;
-
     #content {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 100%;
-      margin-top: 4rem;
+      margin-top: 6rem;
+
+      @media (max-width: $small-screen) {
+        margin-top: 4rem;
+      }
+
+      .row {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $small-screen) {
+          margin-top: 2rem;
+        }
+      }
 
       .item {
-        color: $white;
+        color: $white75;
         display: flex;
-        gap: 1rem;
         flex: 1;
-        width: 320px;
+        max-width: 22rem;
+        cursor: pointer;
+        text-align: left;
+        gap: 1.5rem;
 
         .icon {
-          padding: 2rem;
-          border-radius: .25rem;
-          border: 1px solid $white50;
-          background: $white25;
+          padding: 2rem 2.25rem;
+          border-radius: .75rem;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: linear-gradient(45deg, #ffffff00 0%, #ffffff0c 100%);
+          color: $white75;
         }
 
         .item-description {
           .item-header {
             letter-spacing: 2px;
-            margin-bottom: 1rem;
+            margin: .75rem 0 .5rem 0;
           }
 
           .item-body {

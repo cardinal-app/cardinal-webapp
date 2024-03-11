@@ -1,12 +1,14 @@
+@import 'animation';
 @import 'colour';
 @import 'font';
 @import 'spacing';
 
 $landing-image: url('../assets/rolling-hills.png');
 $drop-shadow: 0 .5rem 2rem -.5rem #000000BF;
-$small-screen: 1500px;
+$small-screen: 1600px;
 $ease-in: .15s ease-in-out;
 $default-text: 12px;
+$ease-in: .15s ease-in-out;
 
 * {
   margin: 0;
@@ -17,4 +19,5 @@ $default-text: 12px;
 body {
   background: $black;
   background: linear-gradient(0deg, $black 40%, $mirage 100%);
+  overflow: hidden;
 }
