@@ -16,13 +16,13 @@
   const tree = 
   {
     "src": {
-      "core": [ /* Tested with Jest (unit**) */
+      "core": [ /* Tested with Jest** (unit) */
         "components",
         "guards",
         "model",
-        "pipes**",
-        "services**",
-        "utilities**"
+        "pipes",      // **
+        "services",  // **
+        "utilities" // **
       ],
       "presentation": [ /* Tested with Cypress (integration) */
         "login",
