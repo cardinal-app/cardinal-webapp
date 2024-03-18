@@ -1,36 +1,35 @@
 [![jhc github](https://img.shields.io/badge/GitHub-jrsmth-181717.svg?style=flat&logo=github)](https://github.com/jrsmth)
 [![angular](https://img.shields.io/badge/angular%20-17%20-blue.svg?style=flat&logo=Angular&logoColor=white)](https://www.angular.io)
-<!-- Workflow Badge - Team City and/or GitHub Actions -->
-# webapp
+[![main](https://github.com/cardinal-app/webapp/actions/workflows/main.yaml/badge.svg)](https://github.com/cardinal-app/webapp/actions/workflows/main.yaml)
+
+# <img src="./src/assets/badge.png" width="28" alt="Logo"> Webapp
 */ˈkɑːdɪnəl/ Of the greatest importance; fundamental.*
 
-<br>
+![cardinal_demo](https://github.com/jrsmth/ultima/assets/34093915/701a547e-66ab-4178-9da1-cb5ae9654166)
 
-#### `v0.0.x` - Angular 16/17 Demo Functionality
-- Signals
-- Deferrable Views
-- New Control Flow Syntax
-- Server-Side Rendering (SSR) & Hydration
-- Default standalone components
-- Unit testing with Jest
-- E2e testing with Cypress
+## Explanation
+- 🧬 Suite of tools to assist with life admin
+- ℹ️ [More info](https://github.com/cardinal-app)
 
-<br>
-
-### Project Structure
-- src
-  - app
-    - structure (presentation structure) [tested with Cypress?]
-      - login
-      - home
-      - fit-track
-      - x
-      - y
-    - core (global functionality) [tested with Jest?]
-      - components
-      - guards
-      - model
-      - pipes
-      - services
-      - utilities
-    - `app.*.*`
+## Project
+```javascript
+  const tree = 
+  {
+    "src": {
+      "core": [ /* Tested with Jest (unit) &dagger; */
+        "components",
+        "guards",
+        "model",
+        "pipes",    /* &dagger; */
+        "services", /* &dagger; */
+        "utilities" /* &dagger; */
+      ],
+      "presentation": [ /* Tested with Cypress (integration) */
+        "login",
+        "home",
+        "fit-track"
+        ],
+      "app": "app.*.*" 
+    }
+  }
+```
