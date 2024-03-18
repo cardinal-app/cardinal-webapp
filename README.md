@@ -9,20 +9,20 @@
 
 ## Explanation
 - 🧬 Suite of tools to assist with life admin
-- ℹ️ [More info](https://github.com/cardinal-app)
+- ℹ️ [See more](https://github.com/cardinal-app)
 
 ## Project
 ```javascript
   const tree = 
   {
     "src": {
-      "core": [ /* Tested with Jest (unit) &dagger; */
+      "core": [ /* Tested with Jest (unit**) */
         "components",
         "guards",
         "model",
-        "pipes",    /* &dagger; */
-        "services", /* &dagger; */
-        "utilities" /* &dagger; */
+        "pipes**",
+        "services**",
+        "utilities**"
       ],
       "presentation": [ /* Tested with Cypress (integration) */
         "login",
