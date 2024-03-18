@@ -1,0 +1,105 @@
+{
+  "_embedded" : {
+    "weeks" : [ {
+      "createdDate" : "2024-03-18T17:02:12.208+00:00",
+      "block" : 14,
+      "week" : 1,
+      "weekCommencing" : null,
+      "weekNotes" : null,
+      "flags" : [ "OUT" ],
+      "general" : {
+        "createdDate" : "2024-03-18T17:02:12.208+00:00",
+        "activities" : [ {
+          "createdDate" : "2024-03-18T17:02:12.208+00:00",
+          "type" : "SQUASH",
+          "number" : 2,
+          "notes" : "Lorem ipsum dolor set..."
+        }, {
+          "createdDate" : "2024-03-18T17:02:12.208+00:00",
+          "type" : "FOOTBALL",
+          "number" : 1,
+          "notes" : "Lorem ipsum dolor set..."
+        }, {
+          "createdDate" : "2024-03-18T17:02:12.208+00:00",
+          "type" : "RESTORE",
+          "number" : 1,
+          "notes" : "Lorem ipsum dolor set..."
+        } ],
+        "gym" : {
+          "createdDate" : "2024-03-18T17:02:12.209+00:00",
+          "maxPress" : null,
+          "maxPull" : null,
+          "totalPress" : null,
+          "totalPull" : null,
+          "coreExerciseName" : null,
+          "coreSetReps" : [ ],
+          "notes" : "Standard gym work on THU AM, plus FINTAN session on TUE"
+        },
+        "sessions" : [ {
+          "createdDate" : "2024-03-18T17:02:12.208+00:00",
+          "date" : "2024-01-06T00:00:00.000+00:00",
+          "anteMeridiem" : null,
+          "location" : "CASSIO",
+          "notes" : "Lorem ipsum dolor set..",
+          "type" : "PJFT",
+          "dataPoints" : { }
+        } ]
+      },
+      "resistance" : {
+        "createdDate" : "2024-03-18T17:02:12.209+00:00",
+        "sessions" : [ {
+          "createdDate" : "2024-03-18T17:02:12.209+00:00",
+          "date" : "2024-01-01T00:00:00.000+00:00",
+          "anteMeridiem" : null,
+          "location" : null,
+          "notes" : "Lorem ipsum dolor set..",
+          "focus" : "FULL",
+          "exercises" : [ ]
+        } ]
+      },
+      "running" : {
+        "createdDate" : "2024-03-18T17:02:12.210+00:00",
+        "volume" : 8,
+        "sessions" : [ {
+          "createdDate" : "2024-03-18T17:02:12.210+00:00",
+          "date" : "2024-01-02T00:00:00.000+00:00",
+          "anteMeridiem" : null,
+          "location" : "KINGS",
+          "notes" : "Lorem ipsum dolor set..",
+          "type" : "FINTAN",
+          "dataPoints" : { }
+        }, {
+          "createdDate" : "2024-03-18T17:02:12.210+00:00",
+          "date" : "2024-01-06T00:00:00.000+00:00",
+          "anteMeridiem" : null,
+          "location" : "CASSIO",
+          "notes" : "Lorem ipsum dolor set..",
+          "type" : "BFT",
+          "dataPoints" : { }
+        } ]
+      },
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/weeks/1"
+        },
+        "week" : {
+          "href" : "http://localhost:8080/weeks/1"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/weeks?page=0&size=20"
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/profile/weeks"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 1,
+    "totalPages" : 1,
+    "number" : 0
+  }
+}
