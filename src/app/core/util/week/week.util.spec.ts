@@ -1,6 +1,5 @@
 import { Week } from "../../model/fit-track/week";
 import { WeekUtil } from "./week.util";
-import { expect } from '@jest/globals';
 
 describe('Week Util Spec', () => {
 
