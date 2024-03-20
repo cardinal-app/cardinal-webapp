@@ -2,7 +2,7 @@ name: test
 on:
   workflow_call:
 jobs:
-  test:
+  jest:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,7 +16,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Deps 📦
         run: npm ci
-      - name: Unit Test 📐
+      - name: Test 📐
         run: npm run test
-      - name: Integration Test 📐
-        run: npm run cy:run
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v1
+      - name: Cypress Run 📐
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm run start
+          wait-on: http://localhost:4200
