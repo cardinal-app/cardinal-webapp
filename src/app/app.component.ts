@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Router, RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeComponent } from "./structure/home/home.component";
+import { HomeComponent } from "./presentation/home/home.component";
 import {
   faCog, faHouse, faPersonRunning, faQuestion, faSearch, faBell, faPencil, faCoins, faList, faHammer, faCameraRetro
 } from "@fortawesome/free-solid-svg-icons";
-import {AuthenticationService} from "./core/service/auth/authentication-service";
+import { AuthenticationService } from "./core/service/auth/authentication-service";
 
 @Component({
   selector: 'app-root',
