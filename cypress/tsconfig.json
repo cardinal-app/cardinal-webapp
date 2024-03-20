@@ -6,7 +6,9 @@
   },
   "include": [
     "../node_modules/cypress",
-    "./**/*.ts"
+    "./**/*.ts",
+    "cypress",
+    "./cypress.config.ts"
   ],
   "exclude": []
 }
