@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { lastValueFrom, map, Subject } from "rxjs";
+import { lastValueFrom, map } from "rxjs";
 import { HttpService } from "../http/http.service";
 import { Week } from "../../model/fit-track/week";
 

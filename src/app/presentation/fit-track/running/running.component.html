@@ -10,7 +10,7 @@
     </div>
     <div class="row border">
       <!-- Signals -->
-      <div class="col bg-light bg-gradient border-end text-primary">{{ totalMiles() }}</div>
+      <div class="col bg-light bg-gradient border-end text-primary" id="total-miles">{{ totalMiles() }}</div>
       <div class="col bg-light bg-gradient text-success">{{ totalKilometres() }}</div>
     </div>
   </div>
@@ -37,17 +37,17 @@
             <td>{{ wk.block }}</td>
             <td>{{ wk.week }}</td>
             <td>{{ wk.running.volume }}</td>
-            @switch (wk.activity) {
-              @case ('squash') {
-                <td>{{ wk.activity }} <fa-icon class="text-success" [icon]="faHeartbeat"></fa-icon></td>
-              }
-              @case ('footie') {
-                <td>{{ wk.activity }} <fa-icon class="text-danger" [icon]="faFutbol"></fa-icon></td>
-              }
-              @default {
-                <td>{{ wk.activity }}</td>
-              }
-            }
+<!--            @switch (wk.general.activity) {-->
+<!--              @case ('squash') {-->
+<!--                <td>{{ wk.activity }} <fa-icon class="text-success" [icon]="faHeartbeat"></fa-icon></td>-->
+<!--              }-->
+<!--              @case ('footie') {-->
+<!--                <td>{{ wk.activity }} <fa-icon class="text-danger" [icon]="faFutbol"></fa-icon></td>-->
+<!--              }-->
+<!--              @default {-->
+<!--                <td>{{ wk.activity }}</td>-->
+<!--              }-->
+<!--            }-->
           </tr>
         } @empty {
           <tr>

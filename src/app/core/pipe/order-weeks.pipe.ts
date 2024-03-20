@@ -1,5 +1,6 @@
-import {Pipe, PipeTransform} from "@angular/core";
-import {Week} from "../model/fit-track/week";
+import { Pipe, PipeTransform } from "@angular/core";
+import { Week } from "../model/fit-track/week";
+import { WeekUtil } from '../util/week/week.util';
 
 @Pipe({
   standalone: true,
@@ -7,13 +8,8 @@ import {Week} from "../model/fit-track/week";
 })
 export class OrderWeeksPipe implements PipeTransform {
 
-  transform(unorderedWeeks: Week[], args?: any): any {
-    const orderedWeeks = unorderedWeeks.sort((a: Week, b: Week) => {
-      return (a.block - b.block) || (a.week - b.week) // FixMe :: not working properly...
-    });
-
-    console.log(orderedWeeks);
-    return orderedWeeks;
+  transform(unorderedWeeks: Week[]): Week[] {
+    return WeekUtil.order(unorderedWeeks);
   }
 
 }

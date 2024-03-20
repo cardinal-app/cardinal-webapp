@@ -1,4 +1,4 @@
-import { Component, computed, effect, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, effect, OnInit, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { ResistanceComponent } from "./resistance/resistance.component";
@@ -12,8 +12,8 @@ import { LandingComponent } from "../../core/component/landing/landing.component
 import { AccordionComponent } from "../../core/component/accordion/accordion.component";
 import { ContainerComponent } from "../../core/component/container/container.component";
 import { AdminComponent } from "./admin/admin.component";
-import {WalletComponent} from "../../core/component/wallet/wallet.component";
-import {SideBarComponent} from "../../core/component/side-bar/side-bar.component";
+import { WalletComponent } from "../../core/component/wallet/wallet.component";
+import { SideBarComponent } from "../../core/component/side-bar/side-bar.component";
 
 @Component({
   selector: 'fit-track',

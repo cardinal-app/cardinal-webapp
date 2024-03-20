@@ -12,7 +12,7 @@
       <input id="week-notes" type="text" value="Week Notes" formControlName="weekNotes"><br>
       <mat-form-field>
         <mat-label>Flags</mat-label>
-        <mat-select formControlName="flags" multiple>
+        <mat-select formControlName="flags" multiple id="flag">
           <mat-select-trigger>
             {{weekForm.controls['flags'].value?.[0] || ''}}
             @if ((weekForm.controls['flags'].value?.length || 0) > 1) {
@@ -44,5 +44,5 @@
   <button mat-button mat-dialog-close>Cancel</button>
 <!--  <button mat-button [mat-dialog-close]="true" (click)="activeFormSection == 3 ? submitWeek() : nextSection()">{{ activeFormSection == 3 ? 'Add' : 'Next' }}</button>-->
   <button mat-button *ngIf="activeFormSection > 0" (click)="prevSection()">Previous</button>
-  <button mat-button (click)="activeFormSection == 3 ? submitWeek() : nextSection()">{{ activeFormSection == 3 ? 'Add' : 'Next' }}</button>
+  <button id="modal-add-week-next" mat-button (click)="activeFormSection == 3 ? submitWeek() : nextSection()">{{ activeFormSection == 3 ? 'Add' : 'Next' }}</button>
 </mat-dialog-actions>
