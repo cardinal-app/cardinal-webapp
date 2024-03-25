@@ -27,3 +27,4 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm run start
+          wait-on: http://localhost:4200
