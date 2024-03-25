@@ -1,0 +1,8 @@
+name: develop
+on:
+  push:
+    branches: [ develop ]
+jobs:
+  test:
+    name: test
+    uses: ./.github/workflows/step-test.yaml

@@ -1,0 +1,31 @@
+{
+  "createdDate": "2024-03-18T17:30:06.086+00:00",
+  "block": 1,
+  "week": 1,
+  "weekCommencing": null,
+  "weekNotes": "",
+  "flags": [],
+  "general": {
+    "createdDate": "2024-03-18T17:30:06.087+00:00",
+    "activities": [],
+    "gym": null,
+    "sessions": []
+  },
+  "resistance": {
+    "createdDate": "2024-03-18T17:30:06.087+00:00",
+    "sessions": []
+  },
+  "running": {
+    "createdDate": "2024-03-18T17:30:06.087+00:00",
+    "volume": 8,
+    "sessions": []
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/weeks/2"
+    },
+    "week": {
+      "href": "http://localhost:8080/weeks/2"
+    }
+  }
+}

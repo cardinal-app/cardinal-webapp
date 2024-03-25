@@ -1,9 +1,9 @@
 import { Routes} from '@angular/router';
-import { FitTrackComponent } from "./structure/fit-track/fit-track.component";
-import { HomeComponent } from "./structure/home/home.component";
-import { XComponent } from "./structure/x/x.component";
-import { YComponent } from "./structure/y/y.component";
-import {LoginComponent} from "./structure/login/login.component";
+import { FitTrackComponent } from "./presentation/fit-track/fit-track.component";
+import { HomeComponent } from "./presentation/home/home.component";
+import { XComponent } from "./presentation/x/x.component";
+import { YComponent } from "./presentation/y/y.component";
+import {LoginComponent} from "./presentation/login/login.component";
 import {AuthGuard} from "./core/guard/auth-guard";
 
 export const routes: Routes = [

@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {Week} from "../../model/fit-track/week";
 import {MatDialog} from "@angular/material/dialog";
-import {AddWeekComponent} from "../../../structure/fit-track/admin/add-week/add-week.component";
+import {AddWeekComponent} from "../../../presentation/fit-track/admin/add-week/add-week.component";
 
 @Component({
   selector: 'side-bar',
