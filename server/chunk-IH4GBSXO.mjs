@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-var s=class{static convert(i){return Object.assign(new this,i)}};var e=class extends s{constructor(){super(...arguments),this.sessions=[]}};var r=class extends s{constructor(){super(...arguments),this.sessions=[]}};var o=class extends s{constructor(){super(...arguments),this.volume=0,this.sessions=[]}};var n=class extends s{constructor(){super(...arguments),this.block=0,this.week=0,this.weekCommencing="",this.weekNotes="",this.flags=[],this.general=new e,this.resistance=new r,this.running=new o}};export{n as a};
