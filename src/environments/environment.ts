@@ -4,7 +4,7 @@ export const environment = {
   logLevel: 'ERROR',
   services: {
     fitTrack: {
-      baseUrl: 'https://fit-track.cardinal.jrsmth.io',
+      baseUrl: 'https://fitness-tracker-f55a.onrender.com',
       uri: APP_URI.fitTrack
     }
   }
