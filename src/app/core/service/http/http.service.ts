@@ -9,7 +9,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) {}
 
-  get(baseUrl: String, path: string, params?: any, pathVariables?: any): Observable<any> {
+  get(baseUrl: string, path: string, params?: any, pathVariables?: any): Observable<any> {
     const url = baseUrl + path;
     const headers = new HttpHeaders();
 
@@ -18,8 +18,8 @@ export class HttpService {
       .pipe(catchError(HttpService.handleError));
   }
 
-  post(path: string, body: any, params?: any, pathVariables?: any): Observable<any> {
-    const url = `http://localhost:8080/${path}`;
+  post(baseUrl: string, path: string, body: any, params?: any, pathVariables?: any): Observable<any> {
+    const url = baseUrl + path;
     const headers = new HttpHeaders();
 
     return this.http
