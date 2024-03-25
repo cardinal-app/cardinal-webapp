@@ -7,10 +7,10 @@ import { catchError, Observable, throwError } from "rxjs";
 })
 export class HttpService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  get(path: string, params?: any, pathVariables?: any): Observable<any> {
-    const url = `http://localhost:8080/${path}`;
+  get(baseUrl: String, path: string, params?: any, pathVariables?: any): Observable<any> {
+    const url = baseUrl + path;
     const headers = new HttpHeaders();
 
     return this.http
@@ -28,7 +28,7 @@ export class HttpService {
 
   }
 
-  private static handleError(error: HttpErrorResponse) { // FixMe
+  private static handleError(error: HttpErrorResponse) { // FixMe -> util...
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);
