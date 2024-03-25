@@ -5,7 +5,6 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:github": "ng build --configuration=production --base-href /",
     "watch": "ng build --watch --configuration development",
     "test": "./node_modules/.bin/jest",
     "serve:ssr:webapp": "node dist/webapp/server/server.mjs",
