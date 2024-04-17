@@ -3,5 +3,11 @@ export const APP_URI = {
     addWeek: '/weeks',
     getWeek: '/weeks/{id}',
     getWeeks: '/weeks'
+  },
+  security: {
+    auth: {
+      login: '/auth/login',
+      register: '/auth/register'
+    }
   }
 }

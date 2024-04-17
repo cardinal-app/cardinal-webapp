@@ -6,6 +6,10 @@ export const environment = {
     fitTrack: {
       baseUrl: 'http://localhost:8080',
       uri: APP_URI.fitTrack
+    },
+    security: {
+      baseUrl: 'http://localhost:8010',
+      uri: APP_URI.security
     }
   }
 };

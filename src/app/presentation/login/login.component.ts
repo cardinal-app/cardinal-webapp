@@ -4,7 +4,7 @@ import { Router, RouterOutlet } from "@angular/router";
 import { LandingComponent } from "../../core/component/landing/landing.component";
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
-import { LocalStorageService } from "../../core/service/storage/local-storage-service";
+import { AuthenticationService } from "../../core/service/auth/authentication.service";
 
 @Component({
   selector: 'login',
@@ -18,13 +18,11 @@ export class LoginComponent {
   protected readonly faUser = faUser;
   protected readonly faLock = faLock;
 
-  constructor(private router: Router,
-              private localStorage: LocalStorageService) {
-  }
+  constructor(private router: Router, private auth: AuthenticationService) { }
 
   login() {
-    this.localStorage.set('authToken', 'jwt_t0k3n');
-    this.router.navigate(['/']);
+    this.auth.login().then(); // TODO
+    this.router.navigate(['/home']);
   }
 
 }

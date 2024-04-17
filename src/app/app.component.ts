@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from "./presentation/home/home.component";
-import {
-  faCog, faHouse, faPersonRunning, faQuestion, faSearch, faBell, faPencil, faCoins, faList, faHammer, faCameraRetro
-} from "@fortawesome/free-solid-svg-icons";
-import { AuthenticationService } from "./core/service/auth/authentication-service";
+import { faCog, faHouse, faPersonRunning, faQuestion, faSearch, faBell, faPencil, faCoins, faList, faHammer, faCameraRetro } from "@fortawesome/free-solid-svg-icons";
+import { AuthenticationService } from "./core/service/auth/authentication.service";
 
 @Component({
   selector: 'app-root',
@@ -32,8 +30,8 @@ export class AppComponent {
   constructor(public router: Router, private authService: AuthenticationService) {}
 
   logout(): void {
-    this.authService.removeToken();
-    this.router.navigate(['/auth']);
+    this.authService.logout();
+    this.router.navigate(['/home']).then();
   }
 
 }

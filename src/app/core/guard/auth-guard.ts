@@ -1,20 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Router, RouterStateSnapshot } from "@angular/router";
-import { AuthenticationService } from "../service/auth/authentication-service";
+import { Router } from "@angular/router";
+import { TokenService } from "../service/auth/token.service";
 
 @Injectable({providedIn: 'root'})
 export class AuthGuard {
 
-  constructor (private authService: AuthenticationService, private router: Router) {}
+  constructor (private tokenService: TokenService, private router: Router) { }
 
   canActivate(): boolean {
-    const userAuthenticated = this.authService.hasValidToken();
+    const userAuthenticated = this.tokenService.hasValidToken();
 
-    if (!userAuthenticated) {
-      this.router.navigate(
-        ['/auth']
-      );
-    }
+    if (!userAuthenticated)
+      this.router.navigate(['/home']).then();
 
     return userAuthenticated;
   }
