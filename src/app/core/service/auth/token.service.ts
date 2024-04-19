@@ -51,15 +51,16 @@ export class TokenService {
     if (!token) return null
 
     const decoded: any = jwtDecode(token);
-    /** TODO :: how to verify... using secret (bad idea) :: speak to DAN re auth... or Paul on Monday... see diagram (then write up on MIRO and test it out...)
-     * is the model to soft force a login but require any actions to be authenticated on the backend (dumb client?)
-     *
-     * Have a go at breaking this without hasValidSig...
-     * With just expiry I can force entry to /fit-track...
-     * eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE4MzQ5Njc4OTB9.H_r9p5ppIZPi3FUQoN2XfA-MGfO2a3yurNErUnw6iNo
-     * TokenFilter -> Servlet Exception should throw 401's (not 500) for faulty token...
-     */
     return Token.convert(decoded);
   }
+
+  /** TODO :: how to verify... using secret (bad idea) :: speak to DAN re auth... or Paul on Monday... see diagram (then write up on MIRO and test it out...)
+   * is the model to soft force a login but require any actions to be authenticated on the backend (dumb client?)
+   *
+   * Have a go at breaking this without hasValidSig...
+   * With just expiry I can force entry to /fit-track...
+   * eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE4MzQ5Njc4OTB9.H_r9p5ppIZPi3FUQoN2XfA-MGfO2a3yurNErUnw6iNo
+   * TokenFilter -> Servlet Exception should throw 401's (not 500) for faulty token...
+   */
 
 }
