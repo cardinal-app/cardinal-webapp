@@ -7,11 +7,11 @@ export class AuthGuard {
 
   constructor (private tokenService: TokenService, private router: Router) { }
 
-  canActivate(): boolean {
-    const userAuthenticated = this.tokenService.hasValidToken();
+  async canActivate(): Promise<boolean> {
+    const userAuthenticated = await this.tokenService.hasValidToken();
 
     if (!userAuthenticated)
-      this.router.navigate(['/home']).then();
+      this.router.navigate(['/auth/login']).then();
 
     return userAuthenticated;
   }

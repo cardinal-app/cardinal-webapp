@@ -3,7 +3,7 @@ import { throwError } from "rxjs";
 
 export class HttpUtil {
 
-  private static handleError(error: HttpErrorResponse) { // FixMe
+  static handleError(error: HttpErrorResponse) { // TODO :: extend & unit test
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);
@@ -15,6 +15,9 @@ export class HttpUtil {
     }
     // Return an observable with a user-facing error message.
     return throwError(() => new Error('Something bad happened; please try again later.'));
+
+    // TODO :: if 401 -> redirect to /login
+    // Question :: how to split the responsibility with unauthorised.interceptor? or should be all??
   }
 
 }

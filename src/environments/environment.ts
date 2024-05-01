@@ -1,14 +1,17 @@
 import { APP_URI } from '../app/app.uri';
 
+export const host = 'jrsmth.cardinal.io';
+export const url = (service: string) => `https://${service}.${host}`;
+
 export const environment = {
   logLevel: 'ERROR',
   services: {
     fitTrack: {
-      baseUrl: 'https://fit-track.cardinal.jrsmth.io',
+      baseUrl: url('fit-track'),
       uri: APP_URI.fitTrack
     },
     security: {
-      baseUrl: 'https://security.cardinal.jrsmth.io',
+      baseUrl: url('security'),
       uri: APP_URI.security
     }
   }

@@ -65,13 +65,4 @@ describe('Fit Track', () => {
     })
   })
 
-/** What should the fit-track page do? */
-/**
- * Retrieve previous data (READ)
- *    >> When I load, I want a call to be made to 'backend', if backend fails, display this...
- *    >> When I load, I want a call to be made to 'backend', if backend success, display that... ~ implement later...
- * Allow you to add new data (CREATE)
- *    >> When I click to add and input info, send request to backend, if success then show this
- *    >> When I click to add and input info, send request to backend, if fail then show that... ~ implement later...
- * Allow you to update old data (UPDATE / DELETE) ~ implement later...
- */
+// Question :: is it possible to get a list of test descriptions to document what this feature does?

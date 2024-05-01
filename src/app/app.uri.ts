@@ -8,6 +8,9 @@ export const APP_URI = {
     auth: {
       login: '/auth/login',
       register: '/auth/register'
+    },
+    token: {
+      validate: '/token/validate'
     }
   }
 }
