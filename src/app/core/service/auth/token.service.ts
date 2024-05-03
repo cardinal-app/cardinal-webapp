@@ -1,10 +1,10 @@
 import { computed, Injectable, Signal, signal, WritableSignal } from '@angular/core';
-import { StorageUtil } from "../../util/storage/storage.util";
 import { Token } from "../../model/token";
 import { jwtDecode } from "jwt-decode";
 import { environment } from "../../../../environments/environment";
 import { HttpService } from "../http/http.service";
 import { lastValueFrom, map } from "rxjs";
+import { StorageService } from "../storage/storage.service";
 
 const BASE_URL = environment.services.security.baseUrl;
 const URI = environment.services.security.uri;
@@ -17,16 +17,24 @@ export class TokenService {
   private token: WritableSignal<null | string> = signal(null);
   private decoded: Signal<null | Token> = computed(() => this.decode(this.token()));
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private storage: StorageService) { }
+
+  /** Retrieve authentication token */
+  get(): string {
+    const token = this.token();
+    const empty = !token;
+
+    return empty ? '' : token as string;
+  }
 
   /** Set authentication token in local storage */
   set(token: string): void {
-    StorageUtil.set('token', token);
+    this.storage.set('token', token);
   }
 
   /** Determine if user is signed in by presence of valid token */
   async hasValidToken(): Promise<boolean> {
-    this.token.update(() => StorageUtil.get('token'));
+    this.token.update(() => this.storage.get('token'));
 
     const tokenEmpty = !this.decoded();
     if (tokenEmpty) return false;
@@ -48,7 +56,7 @@ export class TokenService {
 
   /** Logout user by removing token from local storage */
   removeToken(): void {
-    StorageUtil.remove('token');
+    this.storage.delete('token');
   }
 
   /** Determine if a token has a valid signature */

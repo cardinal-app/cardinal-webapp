@@ -1,6 +1,7 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import { StorageUtil } from "../util/storage/storage.util";
+import { TokenService } from "../service/auth/token.service";
 import { host } from "../../../environments/environment";
+import { inject } from "@angular/core";
 
 /**
  * Http Interceptor that adds token to outbound requests
@@ -9,12 +10,12 @@ import { host } from "../../../environments/environment";
  * @since 1st May 2024
  */
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = StorageUtil.get('token');
+  const token = inject(TokenService);
   const internal = req.url.includes(host);
 
   if (internal) {
     req = req.clone({
-      setHeaders: { Authorization: `Bearer ${token}` }
+      setHeaders: { Authorization: `Bearer ${token.get()}` }
     });
   }
 

@@ -1,12 +1,13 @@
 import "cypress-localstorage-commands"
+
 describe('Protected Routes', () => {
   const tokenUrl = 'http://localhost:8010/token';
   const protect = '/fit-track';
-  const redirect = '/home';
+  const redirect = '/auth/login';
   const unprotectedRoutes: string[] = [
     "home",
-    "login",
-    "register"
+    "auth/login",
+    "auth/register"
   ];
 
   beforeEach(() => {
@@ -33,7 +34,7 @@ describe('Protected Routes', () => {
       /** When: */
       cy.visit(protect);
 
-      /** Then: should be redirected to home page */
+      /** Then: should be redirected to login page */
       cy.location('pathname').should('eq', redirect);
     })
 
@@ -52,7 +53,7 @@ describe('Protected Routes', () => {
       /** When: there is no token */
       cy.visit(protect);
 
-      /** Then: should be redirected to home page */
+      /** Then: should be redirected to login page */
       cy.location('pathname').should('eq', redirect);
     })
 

@@ -5,6 +5,7 @@ export const url = (port: string) => `http://${host}:${port}`;
 
 export const environment = {
   logLevel: 'INFO',
+  storage: false,
   services: {
     fitTrack: {
       baseUrl: url('8080'),
