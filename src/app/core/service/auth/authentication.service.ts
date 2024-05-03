@@ -12,15 +12,21 @@ const URI = environment.services.security.uri;
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpService, private token: TokenService, private router: Router) { }
+  constructor(
+    private http: HttpService,
+    private token: TokenService,
+    private router: Router) { }
 
   /** Attempt to sign in a user to Cardinal with given credentials */
-  async login() {
-    this.http.post(BASE_URL, URI.auth.login, '');
+  async login(credentials: any) {
+    await this.http.post(BASE_URL, URI.auth.login, credentials).subscribe(
+      (res: any) => {
+        const token = res.token;
+        this.token.set(token);
+      }
+    );
 
-    this.token.set('a_token')
-
-    // Note :: then redirect to /home
+    this.router.navigate(['/home']).then();
   }
 
   /** Attempt to register a new Cardinal user */

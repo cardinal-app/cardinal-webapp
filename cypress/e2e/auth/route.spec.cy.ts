@@ -10,6 +10,8 @@ describe('Protected Routes', () => {
     "auth/register"
   ];
 
+  // Note :: end to end test: no setting storage directly, login if you have to...
+
   beforeEach(() => {
     cy.visit(redirect);
   });

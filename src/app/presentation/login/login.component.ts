@@ -21,8 +21,14 @@ export class LoginComponent {
   constructor(private router: Router, private auth: AuthenticationService) { }
 
   login() {
-    this.auth.login().then(); // TODO
-    this.router.navigate(['/home']);
+    const credentials = {
+      email: 'jamesrichardsmith97@gmail.com',
+      password: 'test'
+    }
+
+    this.auth.login(credentials).then(
+      () => console.log('User has been logged in...') // TODO :: log.TRACE
+    );
   }
 
 }

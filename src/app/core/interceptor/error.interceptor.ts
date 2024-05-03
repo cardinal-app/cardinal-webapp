@@ -4,7 +4,7 @@ import { inject } from "@angular/core";
 import { AuthenticationService } from "../service/auth/authentication.service";
 
 /**
- * Http Interceptor that triggers on errored requests
+ * Http Interceptor that handles response errors
  *
  * @author J. R. Smith
  * @since 1st May 2024

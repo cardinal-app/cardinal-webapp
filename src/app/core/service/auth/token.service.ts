@@ -1,4 +1,4 @@
-import { computed, Injectable, Signal, signal, WritableSignal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Token } from "../../model/token";
 import { jwtDecode } from "jwt-decode";
 import { environment } from "../../../../environments/environment";
@@ -14,14 +14,11 @@ const URI = environment.services.security.uri;
 })
 export class TokenService {
 
-  private token: WritableSignal<null | string> = signal(null);
-  private decoded: Signal<null | Token> = computed(() => this.decode(this.token()));
-
   constructor(private http: HttpService, private storage: StorageService) { }
 
   /** Retrieve authentication token */
   get(): string {
-    const token = this.token();
+    const token = this.storage.get('token');
     const empty = !token;
 
     return empty ? '' : token as string;
@@ -34,9 +31,7 @@ export class TokenService {
 
   /** Determine if user is signed in by presence of valid token */
   async hasValidToken(): Promise<boolean> {
-    this.token.update(() => this.storage.get('token'));
-
-    const tokenEmpty = !this.decoded();
+    const tokenEmpty = !this.get();
     if (tokenEmpty) return false;
 
     return this.hasValidExpiry() && await this.hasValidSignature();
@@ -49,7 +44,8 @@ export class TokenService {
      *
      * Have a go at breaking this without hasValidSig...
      * With just expiry I can force entry to /fit-track...
-     * eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE4MzQ5Njc4OTB9.H_r9p5ppIZPi3FUQoN2XfA-MGfO2a3yurNErUnw6iNo
+     * TOKEN with maxed out expiry
+     * eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjk5OTk5OTk5OTk5OX0.RAXPOm19cHn5mG7fSyo1K6wamKUX8XXzKsLKpz_Lb3I
      * TokenFilter -> Servlet Exception should throw 401's (not 500) for faulty token...
      */
   }
@@ -71,13 +67,18 @@ export class TokenService {
 
   /** Determine if a token is yet to expire */
   private hasValidExpiry(): boolean {
-    const expiry = new Date(1000 * this.decoded()!.exp);
+    const decoded: Token = this.decode ?? new Token();
+    // Note :: ?? -> "Nullish coalescing operator"
+
+    const expiry = new Date(1000 * decoded.exp);
     const now = new Date();
+
     return expiry.getTime() > now.getTime();
   }
 
-  /** Decode an authorisation token */
-  private decode(token: any): Token | null {
+  /** Get the decoded authorisation token */
+  private get decode(): Token | null {
+    const token = this.get();
     if (!token) return null
 
     try {
