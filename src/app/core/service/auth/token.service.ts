@@ -27,7 +27,7 @@ export class TokenService {
     return empty ? '' : token as string;
   }
 
-  /** Set authentication token in local storage */
+  /** Set authentication token in storage */
   set(token: string): void {
     this.storage.set('token', token);
   }
@@ -54,8 +54,8 @@ export class TokenService {
      */
   }
 
-  /** Logout user by removing token from local storage */
-  removeToken(): void {
+  /** Delete token from storage */
+  remove(): void {
     this.storage.delete('token');
   }
 

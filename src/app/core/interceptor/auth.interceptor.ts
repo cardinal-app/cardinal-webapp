@@ -9,7 +9,7 @@ import { inject } from "@angular/core";
  * @author J. R. Smith
  * @since 1st May 2024
  */
-export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const token = inject(TokenService);
   const internal = req.url.includes(host);
 

@@ -4,7 +4,7 @@ import { HomeComponent } from "./presentation/home/home.component";
 import { XComponent } from "./presentation/x/x.component";
 import { YComponent } from "./presentation/y/y.component";
 import { LoginComponent } from "./presentation/login/login.component";
-import { AuthGuard } from "./core/guard/auth-guard";
+import { AuthGuard } from "./core/guard/auth.guard";
 
 export const routes: Routes = [
   /** Open Routes */

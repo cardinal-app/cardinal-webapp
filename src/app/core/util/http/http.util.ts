@@ -5,19 +5,15 @@ export class HttpUtil {
 
   static handleError(error: HttpErrorResponse) { // TODO :: extend & unit test
     if (error.status === 0) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong.
-      console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
-    }
-    // Return an observable with a user-facing error message.
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+      console.error('Client-side or network error occurred:', error.error); // TODO :: log it...
 
-    // TODO :: if 401 -> redirect to /login
-    // Question :: how to split the responsibility with unauthorised.interceptor? or should be all??
+    } else {
+      console.error('Backend error occurred:', error.error); // TODO :: log it...
+
+      console.trace('Response code processing to be handled by interceptor'); // TODO :: log it...
+    }
+
+    return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 
 }

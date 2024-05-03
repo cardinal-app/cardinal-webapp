@@ -6,7 +6,7 @@ export const url = (service: string) => `https://${service}.${host}`;
 export const environment = {
   production: true,
   logLevel: 'ERROR',
-  datastore: false,
+  cookies: true,
   services: {
     fitTrack: {
       baseUrl: url('fit-track'),
