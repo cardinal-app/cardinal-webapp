@@ -60,7 +60,7 @@ export class TokenService {
     return lastValueFrom(
       this.http.get(BASE_URL, URI.token.validate, '')
         .pipe(map(response => {
-          return response;
+          return response.valid;
         }))
     );
   }

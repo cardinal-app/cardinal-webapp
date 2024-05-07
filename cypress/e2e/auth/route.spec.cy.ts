@@ -1,7 +1,8 @@
 import "cypress-localstorage-commands"
+import unsigned from '../../fixtures/auth/unsigned-max-expiry.json'
 
 describe('Protected Routes', () => {
-  const tokenUrl = 'http://localhost:8010/token';
+  const tokenUrl = 'http://localhost:8010/token/validate';
   const protect = '/fit-track';
   const redirect = '/auth/login';
   const unprotectedRoutes: string[] = [
@@ -10,28 +11,26 @@ describe('Protected Routes', () => {
     "auth/register"
   ];
 
-  // Note :: end to end test: no setting storage directly, login if you have to...
-
-  beforeEach(() => {
-    cy.visit(redirect);
-  });
+  // Note :: local storage used over cookie storage for 'local' profile
 
   afterEach(() => {
     cy.clearLocalStorage();
   });
 
-  // Question :: is it possible to get a list of test descriptions to document what this feature does?
-
   describe('Require valid token to access protected routes', () => {
+    beforeEach(() => {
+      cy.intercept('GET', tokenUrl, { fixture: 'auth/invalid' });
+    });
 
     it('should prevent access to protected routes when token has expired', () => {
       /** Given: */
+
+      // TODO :: next...
     })
 
     it('should prevent access to protected routes when token has invalid signature', () => {
       /** Given: token with valid expiry but invalid signature */
-      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjk5OTk5OTk5OTk5OX0.RAXPOm19cHn5mG7fSyo1K6wamKUX8XXzKsLKpz_Lb3I";
-      cy.setLocalStorage("token", token);
+      cy.setLocalStorage("token", unsigned.token);
 
       /** When: */
       cy.visit(protect);
