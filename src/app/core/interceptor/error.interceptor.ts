@@ -11,6 +11,7 @@ import { AuthenticationService } from "../service/auth/authentication.service";
  */
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const auth = inject(AuthenticationService);
+  // Question :: inject broadcaster?
 
   return next(req).pipe(catchError((err: any) => {
       if (err instanceof HttpErrorResponse) {

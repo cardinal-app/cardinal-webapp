@@ -1,5 +1,5 @@
 import 'cypress-localstorage-commands'
-import response from '../../fixtures/auth/unsigned-max-expiry.json'
+import sample from '../../fixtures/auth/token/unsigned-max-expiry.json'
 
 describe('Login', () => {
   const homePage = '/home';
@@ -9,7 +9,7 @@ describe('Login', () => {
   describe('Valid', () => {
     beforeEach(() => {
       cy.visit(loginPage);
-      cy.intercept('POST', loginUrl, { fixture: 'auth/unsigned-max-expiry' });
+      cy.intercept('POST', loginUrl, { fixture: 'auth/token/unsigned-max-expiry' });
     });
 
     it('should sign user in when valid credentials are used', () => {
@@ -21,8 +21,10 @@ describe('Login', () => {
       /** Then: user is routed to home page and token is set in storage */
       cy.location('pathname').should('eq', homePage);
 
-      cy.getLocalStorage("token").should('eq', response.token);
+      cy.getLocalStorage("token").should('eq', sample.token);
       // Note :: local storage used over cookie storage for 'local' profile
+
+      // Fixme...
     });
   })
 
@@ -33,7 +35,7 @@ describe('Login', () => {
     });
 
     it('should reject login when invalid credentials are used', () => {
-      // TODO
+      // TODO :: next...
 
       /** Then: user is presented with failure reason and given another change to login */
     });

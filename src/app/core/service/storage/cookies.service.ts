@@ -14,20 +14,20 @@ import { host } from "../../../../environments/environment";
 })
 export class CookiesService implements StorageService {
 
-  constructor(private cookie: CookieService) {}
+  constructor(private ngxCookie: CookieService) {}
 
   get(key: string): string | null {
-    const res = this.cookie.get(key);
+    const res = this.ngxCookie.get(key);
 
     return !res ? null : res;
   }
 
   set(key: string, value: string): void {
-    this.cookie.set(key, value, { domain: host, path: '/' });
+    this.ngxCookie.set(key, value, { domain: host, path: '/' });
   }
 
   delete(key: string): void {
-    this.cookie.delete(key);
+    this.ngxCookie.delete(key);
   }
 
 }

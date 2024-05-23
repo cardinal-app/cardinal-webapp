@@ -1,31 +1,36 @@
 import "cypress-localstorage-commands"
-import unsigned from '../../fixtures/auth/unsigned-max-expiry.json'
+import unsigned from '../../fixtures/auth/token/unsigned-max-expiry.json'
+import expired from '../../fixtures/auth/token/expired.json'
 
 describe('Protected Routes', () => {
   const tokenUrl = 'http://localhost:8010/token/validate';
   const protect = '/fit-track';
   const redirect = '/auth/login';
   const unprotectedRoutes: string[] = [
-    "home",
-    "auth/login",
-    "auth/register"
+    "/home",
+    "/auth/login",
+    "/auth/register",
   ];
-
-  // Note :: local storage used over cookie storage for 'local' profile
 
   afterEach(() => {
     cy.clearLocalStorage();
+    // Note :: local storage used over cookie storage for 'local' profile
   });
 
   describe('Require valid token to access protected routes', () => {
     beforeEach(() => {
-      cy.intercept('GET', tokenUrl, { fixture: 'auth/invalid' });
+      cy.intercept('GET', tokenUrl, { fixture: 'auth/invalid-token-response' });
     });
 
     it('should prevent access to protected routes when token has expired', () => {
-      /** Given: */
+      /** Given: token with 'valid' signature but has expired */
+      cy.setLocalStorage("token", expired.token);
 
-      // TODO :: next...
+      /** When: */
+      cy.visit(protect);
+
+      /** Then: should be redirected to login page */
+      cy.location('pathname').should('eq', redirect);
     })
 
     it('should prevent access to protected routes when token has invalid signature', () => {
@@ -58,14 +63,19 @@ describe('Protected Routes', () => {
       cy.location('pathname').should('eq', redirect);
     })
 
-  })
+  });
 
-  it('should grant to access protected routes when token is valid', () => {
+  describe('Permit access to unprotected routes irrespective of token', () => {
 
-  })
+    unprotectedRoutes.forEach((route) => {
+      it(`should grant access to unprotected routes irrespective of token [${route}]`, () => {
+        /** When: */
+        cy.visit(route);
 
-  it('should grant access to unprotected routes irrespective of token', () => {
+        /** Then: should be redirected to login page */
+        cy.location('pathname').should('eq', route);
+      })
+    });
 
-  })
-
+  });
 })
